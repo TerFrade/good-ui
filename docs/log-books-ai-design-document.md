@@ -546,7 +546,7 @@ I may provide very little context beyond competitor material such as:
 Your job is to do the product thinking, research, competitor analysis, print-design planning, and prompt-generation work needed to create a better original logbook.
 
 Important visual direction:
-- The final product should feel modern, minimalist, polished, and practical.
+- The final product should feel minimalist, polished, and practical.
 - Use Refactoring UI-style principles translated into print: strong hierarchy, consistent spacing, restrained colour, thoughtful whitespace, clear grouping, and useful structure.
 - Use Tailwind-style design thinking as inspiration for systematic spacing, typography, and component consistency, but do not design a web app.
 - ASCII diagrams or block layouts are only rough structural wireframes. Do not copy the ASCII look. Convert them into refined print layouts.
@@ -724,7 +724,7 @@ Use the attached material and do additional research where useful.
 Important:
 - Use competitor products only for analysis.
 - Do not copy titles, covers, layouts, wording, illustrations, or unique design ideas.
-- ASCII or text layout examples are structural only; the final design direction should be modern, minimalist, and polished.
+- ASCII or text layout examples are structural only; the final design direction should be minimalist, and polished.
 
 STEP 1 - INFER THE NICHE
 - What niche does this appear to be?
@@ -809,7 +809,7 @@ This is a printed product, not a web app.
 A file named log-books-ai-design-document.md has been provided at the beginning of this session. Use it as the governing design document.
 
 Design style requirement:
-- modern minimalist
+- minimalist
 - polished
 - practical
 - clear hierarchy
@@ -873,7 +873,7 @@ Create:
 - what buyer complaint or use-case each page solves
 
 8. REPEATING LOG PAGE BLUEPRINT
-Provide a clear structural blueprint, but remember: any ASCII is only a wireframe. The final style should be clean, modern, and print-polished.
+Provide a clear structural blueprint, but remember: any ASCII is only a wireframe. The final style should be clean and print-polished.
 
 9. FINAL BUILD NOTES
 - what to generate next
@@ -896,7 +896,7 @@ Use the product concept and design spec below:
 [PASTE OUTPUT FROM PROMPT 2]
 
 Important style requirement:
-- modern minimalist print layout
+- minimalist print layout
 - clean spacing
 - subtle lines
 - refined typography
