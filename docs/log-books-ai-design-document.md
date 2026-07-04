@@ -1,1057 +1,779 @@
-# Log Books UI Design Document + AI Prompt Pack
+# Physical Log Book Design Document + AI Prompt Pack for Amazon KDP
 
 ## Purpose
 
-This document defines a practical design system and AI instruction pack for building **Log Books**: structured records for daily work, development notes, deployments, PR reviews, incidents, meetings, learning notes, and personal reflections.
+This document is for creating **physical log books** for Amazon KDP, not web apps or mobile apps.
 
-Use this file when asking an AI coding assistant to create or refactor Log Book screens. It gives the assistant concrete decisions for sizing, fonts, colours, spacing, layout, hierarchy, component structure, accessibility, and implementation checks.
+Use it when prompting AI tools to create:
 
-The goal is to avoid vague instructions like:
+- competitor analysis reports
+- stronger logbook concepts
+- cover design briefs
+- interior layout plans
+- print-ready manuscript PDF instructions
+- KDP cover PDF instructions
+- final QA checklists before upload
 
-> Make the log books UI look good.
-
-Instead, use instructions like:
-
-> Build the Log Books UI using the design tokens, component contracts, spacing rules, typography scale, states, and acceptance checklist from this design document.
-
----
-
-## Source Design Principles
-
-This repo summarizes ideas from **Refactoring UI**. The Log Books feature should apply these principles directly:
-
-1. **Systematize everything**: avoid one-off values; use predefined colours, spacing, typography, shadows, radius, widths, and states.
-2. **Start with too much space**: begin with generous spacing, then tighten only where the UI needs density.
-3. **Use visual hierarchy**: guide the eye with weight, contrast, spacing, and colour instead of only font size.
-4. **Use fixed widths**: constrain sidebars, forms, and reading columns so content remains comfortable.
-5. **Use contextual line-height**: long text needs enough line-height, while large headings can be tighter.
-6. **Balance weight and contrast**: muted text can use slightly stronger weight; strong text should not always be huge.
-7. **Avoid ambiguous spacing**: spacing should clearly show which items belong together.
-8. **Avoid too many borders**: prefer background, spacing, and subtle shadows over border-heavy layouts.
-9. **Avoid too-long lines**: long-form text should sit in readable columns.
-10. **Design empty states properly**: Log Books depend on user-created content, so empty states are part of the core UX.
-11. **Think mobile first**: start with a small mobile canvas and progressively enhance for desktop.
+The goal is to produce a physical logbook that is useful, original, visually competitive, and ready to turn into a KDP paperback or hardcover PDF.
 
 ---
 
-## Product Definition
+## Core Principle
 
-A **Log Book** is a structured journal/work-record area where users can create, review, filter, and maintain entries.
+A KDP logbook is a **printed product**, not a UI screen.
 
-A good Log Book helps the user answer:
+Do not ask AI for:
 
-- What happened?
-- When did it happen?
-- What category does it belong to?
-- What is the current status?
-- What should I do next?
-- What context should an AI assistant remember from this entry?
+- responsive layouts
+- buttons
+- hover states
+- app components
+- mobile screens
+- web page cards
 
-The UI should feel:
+Ask AI for:
 
-- calm
-- spacious
-- focused
-- professional
-- developer-friendly
-- easy to scan under pressure
-- trustworthy enough for important work notes
-
-Avoid:
-
-- dense admin-dashboard clutter
-- random spacing values
-- every element fighting for attention
-- excessive borders
-- tiny unreadable metadata
-- paragraphs stretching across the full screen
-- too many bright colours in one section
+- fixed trim-size pages
+- safe print margins
+- gutter spacing
+- cover bleed
+- back/spine/front cover layout
+- page templates
+- handwriting space
+- repeated log entry pages
+- review pages
+- print-safe typography
+- PDF export checks
 
 ---
 
-## Core User Flows
+## Refactoring UI Principles Translated to Print
 
-### Flow 1: Create First Log Book
+### 1. Systematize everything
 
-1. User lands on empty Log Books page.
-2. Empty state explains what Log Books are.
-3. User chooses `Create log book` or selects a template.
-4. User fills in title, description, category, and optional default template.
-5. New Log Book appears as a card.
+Use a small set of repeated design decisions:
 
-### Flow 2: Create Log Entry
+- same trim size
+- same margins
+- same line weights
+- same label sizes
+- same heading hierarchy
+- same field spacing
+- same page header/footer style
+- same cover/interior personality
 
-1. User opens a Log Book.
-2. User selects `New entry`.
-3. User chooses a template or blank entry.
-4. User fills in title, summary, tags, status, body, action items, and AI context.
-5. User saves as draft or publishes/completes entry.
+Avoid random field heights, random margins, random fonts, and inconsistent page spacing.
 
-### Flow 3: Review Existing Logs
+### 2. Start spacious
 
-1. User searches or filters entries.
-2. User scans entry list.
-3. User opens an entry.
-4. User reads summary first, then details.
-5. User copies useful AI context or follows up on action items.
+A logbook must be written in by hand. Start with more space than you think you need, then tighten only when the page feels too empty.
 
-### Flow 4: Ask AI From a Log
+### 3. Build hierarchy
 
-1. User opens a log entry.
-2. User uses the `AI context` block.
-3. User copies or sends a clean prompt based on the entry.
-4. AI receives structured context instead of messy notes.
+Guide the eye with:
+
+- type size
+- weight
+- whitespace
+- contrast
+- section dividers
+- field grouping
+
+Do not make every label bold, boxed, or equally loud.
+
+### 4. Avoid ambiguous spacing
+
+Fields that belong together should be close. Separate sections should have clearly larger gaps.
+
+### 5. Avoid too many borders
+
+Do not create a page full of heavy boxes. Use light lines, whitespace, subtle dividers, and simple labels.
+
+### 6. Design for handwriting
+
+This is a physical product. The user needs enough room to write comfortably.
+
+Default writing-space rules:
+
+- single writing line: about `0.28-0.35 in` high
+- compact writing line: about `0.24 in` high
+- notes lines: about `0.32-0.38 in` high
+- checkbox: about `0.12-0.16 in`
+- rating circle: about `0.16-0.22 in`
+- table row: about `0.32-0.45 in`
 
 ---
 
-## Design Tokens
+## Default KDP Working Specs
+
+Always verify final values in KDP before publishing, but these are useful working defaults.
+
+### Interior
+
+Recommended default for many logbooks:
+
+- Trim size: `6 x 9 in`
+- Interior: black ink on white paper
+- Interior bleed: no bleed unless artwork or background reaches the page edge
+- Page count: often `100-120 pages`, adjusted by niche
+- File: print-ready manuscript PDF
+
+Useful alternatives:
+
+- `5 x 8 in`: portable, compact
+- `5.5 x 8.5 in`: journal-like
+- `7 x 10 in`: more writing room
+- `8.5 x 11 in`: workbook/tracker style
+
+### Interior margins for a 100-120 page no-bleed book
+
+Use safe working margins, not bare minimums:
+
+- Inside/gutter: `0.45 in`
+- Outside: `0.35 in`
+- Top: `0.40 in`
+- Bottom: `0.45 in`
+
+For page counts above 150, increase the gutter.
+
+### Cover
+
+The cover must be a single full-wrap PDF:
+
+```txt
+Back cover + spine + front cover
+```
+
+Cover must account for:
+
+- trim size
+- page count
+- paper type
+- ink type
+- spine width
+- bleed
+- safe zones
+- barcode area
+- matte or glossy finish
+
+Do not add spine text unless the page count supports it. If unsure, leave the spine blank or verify in KDP's cover calculator/template generator.
+
+---
+
+## Interior Design Tokens
 
 ### Typography
 
-Preferred font stack:
+Use simple print-safe fonts. Suggested directions:
 
-```css
-font-family: Inter, Satoshi, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-```
+- Professional: Garamond, Palatino, Baskerville-style serif
+- Modern: Arial, Helvetica, Inter-style sans serif
+- Warm journal: elegant serif heading + clean sans label font
+- Technical logbook: clean sans serif with strong structure
 
-Use this scale:
+Suggested interior sizes:
 
-| Token | Size | Line height | Weight | Letter spacing | Use |
-|---|---:|---:|---:|---:|---|
-| `display` | 40px | 48px | 700 | -0.035em | Rare hero/header moments |
-| `h1` | 32px | 40px | 700 | -0.03em | Page titles |
-| `h2` | 24px | 32px | 650 | -0.025em | Section titles |
-| `h3` | 20px | 28px | 650 | -0.02em | Card titles / entry titles |
-| `body-lg` | 18px | 30px | 400 | -0.01em | Important readable text |
-| `body` | 16px | 28px | 400 | 0 | Long-form log content |
-| `body-sm` | 14px | 22px | 400 | 0 | Metadata / helper text |
-| `caption` | 12px | 18px | 600 | 0.04em | All-caps labels / badges |
-
-Rules:
-
-- Use tighter tracking for larger headings.
-- Use looser tracking for all-caps labels.
-- Do not make secondary metadata smaller than 12px.
-- Long-form log body should usually be `16px / 28px`.
-- Prefer stronger weight and better contrast before increasing font size.
-
----
-
-### Colours
-
-Use a neutral-first palette with one primary colour and functional accents.
-
-```ts
-export const logBookColors = {
-  background: "#F8FAFC",
-  backgroundSubtle: "#F1F5F9",
-  surface: "#FFFFFF",
-  surfaceMuted: "#F8FAFC",
-  surfaceElevated: "#FFFFFF",
-
-  textStrong: "#0F172A",
-  text: "#334155",
-  textMuted: "#64748B",
-  textSubtle: "#94A3B8",
-  textInverse: "#FFFFFF",
-
-  borderSubtle: "#E2E8F0",
-  borderStrong: "#CBD5E1",
-
-  primary: "#2563EB",
-  primaryHover: "#1D4ED8",
-  primarySoft: "#DBEAFE",
-  primarySoftText: "#1E40AF",
-
-  success: "#16A34A",
-  successSoft: "#DCFCE7",
-  successText: "#166534",
-
-  warning: "#D97706",
-  warningSoft: "#FEF3C7",
-  warningText: "#92400E",
-
-  danger: "#DC2626",
-  dangerSoft: "#FEE2E2",
-  dangerText: "#991B1B",
-
-  info: "#0284C7",
-  infoSoft: "#E0F2FE",
-  infoText: "#075985"
-};
-```
-
-Colour rules:
-
-- Use `textStrong` only for titles and high-priority content.
-- Use `text` for normal body copy.
-- Use `textMuted` for metadata and secondary descriptions.
-- Use `primary` only for primary actions, selected states, important links, and focus states.
-- Use accent colours only for meaningful status or category communication.
-- Do not create rainbow tag chaos. Tags should be neutral by default.
-
----
-
-### Spacing
-
-Use this spacing scale only:
-
-| Token | Pixels | Use |
+| Use | Size | Notes |
 |---|---:|---|
-| `1` | 4px | Icon/text gap, micro spacing |
-| `2` | 8px | Tight related spacing |
-| `3` | 12px | Badge gaps, compact form gaps |
-| `4` | 16px | Default control spacing |
-| `5` | 20px | Small card padding |
-| `6` | 24px | Default card padding |
-| `8` | 32px | Section spacing |
-| `10` | 40px | Large section spacing |
-| `12` | 48px | Page block spacing |
-| `16` | 64px | Large layout separation |
-| `20` | 80px | Rare large spacing |
-
-Spacing rules:
-
-- Page padding mobile: `16px`
-- Page padding tablet: `24px`
-- Page padding desktop: `32px`
-- Card padding mobile: `20px`
-- Card padding desktop: `24px` to `32px`
-- Gap between label and input: `6px` to `8px`
-- Gap between form fields: `20px` to `24px`
-- Gap between sections inside a card: `24px`
-- Gap between major page sections: `40px`
-- Use larger spacing between unrelated groups than related items.
-
-Bad:
-
-```tsx
-<div className="mt-[19px] gap-[13px] p-[27px]" />
-```
-
-Good:
-
-```tsx
-<div className="mt-6 gap-4 p-6" />
-```
-
----
-
-### Radius
-
-```ts
-export const radii = {
-  sm: "8px",
-  md: "12px",
-  lg: "16px",
-  xl: "20px",
-  "2xl": "24px",
-  full: "9999px"
-};
-```
+| Page title | 14-18 pt | clear but not huge |
+| Section title | 10-12 pt | semibold |
+| Field label | 7.5-9 pt | readable and quiet |
+| Helper text | 7-8 pt | use lightly |
+| Page number | 7-8 pt | subtle |
 
 Rules:
 
-- Buttons: `12px`
-- Inputs/selects: `12px`
-- Cards: `20px` or `24px`
-- Badges/tags: `9999px`
-- Large panels/modals: `24px`
+- Do not use text below 7 pt.
+- Embed fonts in exported PDFs.
+- Use decorative fonts only for cover or large headings.
+- Do not use hard-to-read fonts for functional labels.
 
----
+### Line weights
 
-### Shadows
-
-```ts
-export const shadows = {
-  xs: "0 1px 2px rgba(15, 23, 42, 0.05)",
-  sm: "0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06)",
-  md: "0 8px 24px rgba(15, 23, 42, 0.08)",
-  lg: "0 20px 50px rgba(15, 23, 42, 0.12)"
-};
-```
-
-Rules:
-
-- Default cards: `xs` or subtle border.
-- Dropdowns/popovers: `md`.
-- Modals/dialogs: `lg`.
-- Do not apply heavy shadows to every card.
-
----
-
-### Widths
-
-Use fixed readable widths where appropriate:
-
-| Area | Width |
+| Use | Weight |
 |---|---:|
-| App shell max width | 1280px |
-| Main content max width | 1120px |
-| Reading column max width | 720px |
-| Form column max width | 760px |
-| Sidebar width | 280px |
-| Inspector panel width | 360px |
-| Empty state max width | 520px |
+| faint writing lines | 0.25 pt |
+| normal writing lines | 0.5 pt |
+| section dividers | 0.75 pt |
+| rare emphasis | 1 pt |
 
-Rules:
+Greyscale defaults:
 
-- Long-form body text should stay between `680px` and `760px` max width.
-- Do not let paragraphs span the full desktop viewport.
-- Sidebars should not shrink until text wraps awkwardly.
+- Main text: `#222222`
+- Secondary text: `#666666`
+- Writing lines: `#D9D9D9`
+- Dividers: `#B8B8B8`
 
----
+### Print spacing scale
 
-## Layout System
-
-### Desktop Shell
-
-```txt
-┌─────────────────────────────────────────────────────────────┐
-│ Top Bar: breadcrumb, search, create button                   │
-├───────────────┬────────────────────────────┬────────────────┤
-│ Sidebar       │ Main Content               │ Inspector      │
-│ 280px fixed   │ readable column             │ 360px optional │
-└───────────────┴────────────────────────────┴────────────────┘
-```
-
-### Mobile Shell
-
-```txt
-┌──────────────────────┐
-│ Top Bar              │
-├──────────────────────┤
-│ Log Book List        │
-├──────────────────────┤
-│ Selected Entry       │
-└──────────────────────┘
-```
-
-### Page Container Example
-
-```tsx
-<main className="min-h-screen bg-slate-50 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-  <div className="mx-auto max-w-7xl">
-    {/* content */}
-  </div>
-</main>
-```
+| Token | Size | Use |
+|---|---:|---|
+| XS | 0.05 in | tiny label/line gap |
+| SM | 0.10 in | tight grouping |
+| MD | 0.16 in | normal field spacing |
+| LG | 0.24 in | section spacing |
+| XL | 0.35 in | major blocks |
+| 2XL | 0.50 in | large breaks |
 
 ---
 
-## Core Components
+## Recommended Page Types
 
-### `LogBooksPage`
+A strong logbook should usually include more than one repeated generic page.
 
-Purpose: Main overview page for all log books.
+### 1. Title page
 
-Must include:
+Include:
 
-- Page header
-- Subtitle/explanation
-- Primary `Create log book` action
-- Search/filter row when content exists
-- Log book cards/grid
-- Recent entries section
-- Empty state when no log books exist
+- book title
+- owner name
+- start date
+- end date
 
-Spacing:
+### 2. How to use this logbook
 
-- Header title/subtitle gap: `8px`
-- Header bottom margin: `32px`
-- Header/action gap: `24px`
-- Filter row margin bottom: `24px`
-- Card grid gap: `20px` to `24px`
+Include:
 
-Responsive:
+- 3-5 simple steps
+- how often to fill it in
+- how often to review it
+- explanation of symbols, ratings, or sections
 
-- Mobile: stack header actions, full-width primary button, one-column cards.
-- Desktop: header title/action can sit horizontally, 2-3 column card grid.
+### 3. Setup or goal page
 
----
+Include:
 
-### `LogBookCard`
+- user's goal
+- starting point
+- constraints
+- what success looks like
 
-Purpose: Shows a single log book summary.
+### 4. Repeating log entry page
 
-Content:
+Include:
 
-- Icon/category marker
-- Title
-- Description
-- Entry count
-- Last updated date
-- Optional pinned badge
-- Optional status summary
+- date/session
+- core tracking fields
+- checklist or rating if useful
+- main notes area
+- observations
+- next action or follow-up
 
-Recommended dimensions:
+### 5. Review page
 
-- Desktop min height: `180px`
-- Padding: `24px`
-- Radius: `24px`
-- Internal gap: `16px`
+Add review pages every 7, 14, 30, or 50 entries depending on the niche.
 
-Suggested Tailwind shape:
+Include:
 
-```tsx
-className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xs transition hover:-translate-y-0.5 hover:shadow-md"
-```
+- wins
+- repeated patterns
+- what worked
+- what needs adjustment
+- next focus
 
-Rules:
+### 6. Notes pages
 
-- Title: `20px`, semibold, strong text.
-- Description: `14px`, `22px` to `24px` line height, muted text, max 2 lines in grid.
-- Metadata: `13px` to `14px`, muted text.
-- Icon container: `40px x 40px`, rounded `14px`, soft background.
-- The whole card may be clickable, but do not also make every inner element visually dominant.
+Add a few pages at the back:
+
+- lined
+- dotted
+- grid
+- blank
 
 ---
 
-### `LogEntryList`
+## Repeating Log Entry Blueprint
 
-Purpose: Scannable list of entries.
-
-Each row should include:
-
-- Date/time
-- Entry title
-- One-line summary
-- Tags
-- Status
-- Optional linked project/context
-- Actions menu
-
-Desktop row:
+Use this as a default starting point:
 
 ```txt
-[date] [title + summary + tags] [status] [actions]
-```
+[PAGE TITLE / ENTRY TYPE]
 
-Mobile row:
+Date: ____________       Time/Session: ____________
 
-```txt
-[title]
-[summary]
-[tags]
-[date + status]
+Primary fields:
+Field 1: _______________     Field 2: _______________
+Field 3: _______________     Field 4: _______________
+
+Checklist / rating:
+[ ] Item     [ ] Item     Rating: ○ ○ ○ ○ ○
+
+Main notes:
+____________________________________________________
+____________________________________________________
+____________________________________________________
+____________________________________________________
+
+Observations:
+____________________________________________________
+____________________________________________________
+
+Next action / follow-up:
+____________________________________________________
 ```
 
 Rules:
 
-- Row padding: `16px` to `20px`.
-- Row gap: `12px`.
-- Use either subtle row dividers or separate card rows; do not over-border everything.
-- Active row: soft primary background plus optional left accent line.
-- Hover row: subtle background, not a dramatic colour change.
+- Fast metadata goes at the top.
+- Objective tracking fields come before reflection fields.
+- The largest writing space should be for the most important user input.
+- End with action, follow-up, or summary.
+- Do not overload one page with too many prompts.
 
 ---
 
-### `LogEntryDetail`
+## Cover Design System
 
-Purpose: Reading view for one entry.
+The cover must sell the book in Amazon search results.
 
-Structure:
+### Cover must work at thumbnail size
 
-1. Entry title
-2. Summary paragraph
-3. Metadata strip
-4. Main body sections
-5. Action items
-6. AI context block
-7. Related links/attachments
+Priorities:
 
-Recommended section order:
+1. Title is readable.
+2. Niche is obvious.
+3. Buyer identity is clear.
+4. Mood is different from competitors.
+5. Design looks professional.
+
+### Front cover hierarchy
+
+Recommended order:
+
+1. Main title
+2. Niche/use-case subtitle
+3. Benefit or positioning line
+4. Visual motif
+5. Author or brand name
+
+### Cover style directions
+
+Pick one clear direction.
+
+#### Premium minimal
+
+- strong typography
+- lots of negative space
+- limited colour palette
+- subtle icon or linework
+
+#### Warm guided journal
+
+- soft neutrals
+- gentle serif/sans pairing
+- calm emotional tone
+
+#### Utility/workshop
+
+- practical grid
+- strong labels
+- functional, durable feeling
+
+#### Bold category standout
+
+- high contrast
+- strong title block
+- instantly readable in thumbnail
+
+#### Illustrated niche-specific
+
+- one strong relevant motif
+- not clipart-heavy
+- clear buyer signal
+
+---
+
+## Competitor Analysis Workflow
+
+Collect:
+
+- competitor cover images
+- competitor interior screenshots
+- titles and subtitles
+- descriptions
+- ratings
+- positive reviews
+- negative reviews
+- known page counts, trim sizes, prices, and formats if available
+
+Important rule:
+
+Use competitors to understand the market. Do not copy their titles, covers, wording, layouts, illustrations, or unique concepts.
+
+Analyze:
+
+1. Cover patterns
+2. Interior patterns
+3. Positive review patterns
+4. Negative review complaints
+5. Visual gaps
+6. Functional gaps
+7. Emotional gaps
+8. Usability gaps
+9. Positioning gaps
+10. Production-quality gaps
+
+---
+
+## Prompt 1: Competitor Analysis and Better Product Concept
 
 ```txt
-Title
-Summary
-Metadata chips
----
-Context
-What happened
-Decisions made
-Action items
-AI context
-Related links
+I am creating a physical logbook for Amazon KDP in this niche:
+
+[NICHE NAME]
+
+This is a printed paperback or hardcover logbook, not a web app or mobile app.
+
+I have attached:
+- competitor cover images
+- competitor interior page images
+- competitor titles and subtitles
+- competitor descriptions
+- ratings
+- positive reviews
+- negative reviews
+- any known page counts, trim sizes, prices, and formats
+
+Your job is to analyze the market and design a better original logbook concept.
+
+Do not copy any competitor's exact title, cover, layout, wording, illustration, or unique design. Use competitors only to identify buyer expectations, clichés, gaps, and opportunities.
+
+STEP 1 — COMPETITOR COVER ANALYSIS
+
+For each cover, assess:
+- design style
+- colour palette and mood
+- typography choices and hierarchy
+- thumbnail readability on Amazon
+- who the cover visually speaks to
+- what buyer identity it signals
+- what all covers have in common
+- visual clichés of this niche
+- what feels missing from the visual market
+- what would stand out while still clearly belonging to the niche
+
+STEP 2 — COMPETITOR INTERIOR ANALYSIS
+
+For each interior, assess:
+- page types included
+- fields and sections included
+- layout density
+- handwriting space quality
+- field order and user flow
+- whether instructions are clear
+- whether review/summary pages exist
+- what all interiors have in common
+- functional clichés of this niche
+- missing fields or sections a real user would want
+- usability problems such as poor flow, clutter, wasted space, missing context, illogical order, or too little writing space
+
+STEP 3 — REVIEW MINING
+
+From positive reviews, extract:
+- what buyers genuinely love and want preserved
+- features or details repeatedly praised
+- emotional language buyers use
+- what the logbook means to them
+- who they bought it for and why
+
+From negative reviews, extract:
+- repeated complaints
+- missing features buyers wished existed
+- layout or usability frustrations
+- quality concerns
+- anything that made buyers feel the product was lazy, generic, or incomplete
+- unmet expectations
+
+Organize complaints by frequency and severity.
+
+STEP 4 — GAP MAP
+
+Create a clear gap map:
+- VISUAL GAP
+- FUNCTIONAL GAP
+- EMOTIONAL GAP
+- USABILITY GAP
+- POSITIONING GAP
+- PRODUCTION GAP
+
+STEP 5 — BETTER PRODUCT CONCEPT
+
+Create a superior original product concept.
+
+Include:
+
+CONCEPT NAME AND POSITIONING
+- working title
+- subtitle direction
+- one-line positioning statement
+- target buyer
+- emotional promise
+
+COVER DIRECTION
+- visual approach
+- colour palette
+- mood
+- typography direction
+- image, illustration, or motif direction
+- thumbnail strategy
+- what signal it sends to the buyer
+- what to avoid copying from competitors
+
+INTERIOR STRUCTURE
+- recommended trim size
+- recommended page count
+- list of all page types
+- for each page type: what it includes, why it exists, and how it improves on competitors
+- repeating log entry page structure
+- review/summary pages
+- notes/reference pages
+- layout feel: spacious vs dense, minimal vs guided
+- unique pages or features no competitor currently offers
+
+WHAT TO KEEP FROM COMPETITORS
+- things the market already does well and buyers expect
+
+WHAT TO COMPLETELY AVOID
+- choices buyers dislike
+- generic patterns
+- confusing fields
+- cramped layouts
+- cover clichés
+
+UNIQUE VALUE PROPOSITION
+- one paragraph explaining why a buyer who has seen every other logbook in this niche would choose this one
+
+Be specific and decisive. Give me a product concept I can build from directly.
 ```
 
-Typography:
-
-- Title: `32px / 40px`, bold, tight tracking.
-- Summary: `18px / 30px`, muted but readable.
-- Body: `16px / 28px`, normal text.
-- Section headings: `14px`, semibold, muted, optional uppercase with tracking.
-
-Rules:
-
-- Body content max width: `680px` to `760px`.
-- Do not stretch long content across the full screen.
-- Make summary scannable before detailed body content.
-
 ---
 
-### `LogEntryEditor`
-
-Purpose: Create/edit form for entries.
-
-Fields:
-
-- Title
-- Log book/category
-- Date/time
-- Status
-- Tags
-- Summary
-- Body sections
-- Action items
-- AI context/prompt notes
-
-Layout rules:
-
-- Single-column form by default.
-- Two-column layout only for short metadata fields on tablet/desktop.
-- Inputs: `44px` to `48px` high.
-- Textareas: start at `120px` to `180px` high.
-- Label-to-field gap: `6px` to `8px`.
-- Field group gap: `20px` to `24px`.
-- Form max width: `760px`.
-
-Input style example:
-
-```tsx
-className="h-11 rounded-xl border border-slate-300 bg-white px-3 text-sm text-slate-900 shadow-xs outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-```
-
----
-
-### `StatusBadge`
-
-Statuses:
-
-- Draft
-- Active
-- Waiting
-- Blocked
-- Done
-- Archived
-
-Sizing:
-
-- Height: `24px` or `28px`
-- Horizontal padding: `10px`
-- Radius: full
-- Font: `12px`, medium
-
-Colours:
-
-| Status | Background | Text |
-|---|---|---|
-| Draft | `#F1F5F9` | `#475569` |
-| Active | `#DBEAFE` | `#1E40AF` |
-| Waiting | `#FEF3C7` | `#92400E` |
-| Blocked | `#FEE2E2` | `#991B1B` |
-| Done | `#DCFCE7` | `#166534` |
-| Archived | `#F8FAFC` | `#64748B` |
-
----
-
-### `TagPill`
-
-Purpose: Display tags without overpowering the UI.
-
-Suggested style:
-
-```tsx
-className="inline-flex h-7 items-center rounded-full bg-slate-100 px-3 text-xs font-medium text-slate-600"
-```
-
-Rules:
-
-- Tags are neutral by default.
-- Use colour only for meaningful categories.
-- Do not use many competing bright colours in a small area.
-
----
-
-### `EmptyState`
-
-Purpose: Guide users when there are no log books or no entries.
-
-Required content:
-
-- Icon or simple illustration
-- Friendly title
-- Short explanation
-- Primary action
-- Optional secondary action
-- Optional template suggestions
-
-Sizing:
-
-- Container max width: `520px`
-- Padding: `24px` mobile, `40px` desktop
-- Icon size: `48px`
-- Title: `20px` or `24px`
-- Description: `14px` to `16px`, max width `420px`
-
-Example copy:
+## Prompt 2: Physical Logbook Design Specification
 
 ```txt
-No log entries yet
-Capture your first work note, incident, learning, or decision so future-you and your AI assistant have clean context.
-```
+You are a senior print designer specializing in Amazon KDP logbooks.
 
-Important:
+Using the product concept below, create a full physical logbook design specification.
 
-- Hide tabs, filters, and sorting controls if there is no content yet.
-- The empty state should prioritize creating the first useful entry.
+This is for a print-ready PDF, not a web app.
 
----
+PRODUCT CONCEPT:
+[PASTE PRODUCT CONCEPT]
 
-## Log Book Templates
+Create a design specification with:
 
-### Daily Work Log
+1. BOOK FORMAT
+- trim size
+- page count
+- binding assumption
+- black-and-white or colour interior
+- bleed or no-bleed interior
+- paper recommendation
+- cover finish recommendation
 
-Fields:
+2. DESIGN PERSONALITY
+- 5-8 words describing the visual personality
+- what the book should feel like in the buyer's hands
+- what it must avoid
 
-- Date
-- Focus area
-- Tasks completed
-- Blockers
-- Decisions
-- Follow-ups
-- AI context
+3. COVER SPEC
+- front cover hierarchy
+- back cover content
+- spine guidance
+- barcode safe area reminder
+- colour palette
+- typography direction
+- image, illustration, or icon direction
+- thumbnail readability rules
+- 3 alternative cover concepts
 
-### Development Log
+4. INTERIOR SYSTEM
+- margins and safe zones
+- typography scale
+- line weights
+- greyscale palette
+- spacing scale
+- page header/footer treatment
+- page numbering style
+- section divider style
 
-Fields:
+5. PAGE-BY-PAGE STRUCTURE
+For every unique page type, specify:
+- page purpose
+- exact fields
+- order of fields
+- approximate field size
+- writing line count
+- spacing notes
+- whether the page repeats
+- how many times it repeats
 
-- Feature/task
-- Branch/PR
-- Problem solved
-- Implementation notes
-- Edge cases
-- Tests added
-- Risks
-- Follow-ups
+6. REPEATING LOG PAGE BLUEPRINT
+Give an exact layout blueprint in text form, including approximate vertical space allocation.
 
-### Deployment Log
+7. PRINT QA CHECKLIST
+Include checks for margins, gutter, trim size, bleed, font embedding, line thickness, readability, page count, barcode area, cover PDF, and interior PDF.
 
-Fields:
-
-- Environment
-- Version/branch
-- Deployment steps
-- Verification steps
-- Rollback plan
-- Issues found
-- Sign-off
-
-### PR Review Log
-
-Fields:
-
-- PR link
-- Area reviewed
-- Concerns
-- Suggestions
-- Tests checked
-- Decision
-- Follow-up comments
-
-### Incident Log
-
-Fields:
-
-- Incident summary
-- Impact
-- Timeline
-- Root cause
-- Mitigation
-- Follow-up actions
-- Lessons learned
-
-### Learning Log
-
-Fields:
-
-- Topic
-- Source/book/video/course
-- Main idea
-- Examples
-- How I can apply this
-- Questions
-- Next practice step
-
----
-
-## Interaction States
-
-Every interactive component must define:
-
-- Default
-- Hover
-- Focus-visible
-- Active/pressed
-- Selected/current
-- Disabled
-- Loading
-- Error
-- Empty
-
-### Primary Button
-
-```tsx
-className="inline-flex h-11 items-center justify-center rounded-xl bg-blue-600 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 disabled:cursor-not-allowed disabled:opacity-50"
-```
-
-### Secondary Button
-
-```tsx
-className="inline-flex h-11 items-center justify-center rounded-xl border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-700 shadow-xs transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-100 disabled:cursor-not-allowed disabled:opacity-50"
-```
-
-### Tertiary Button
-
-```tsx
-className="inline-flex h-10 items-center justify-center rounded-xl px-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-100"
-```
-
-### Destructive Button
-
-Rules:
-
-- Destructive actions should be visually subtle by default.
-- Use strong red styling only in confirmation flows where the destructive action is the main decision.
-- Always require confirmation for deleting log books or entries.
-
----
-
-## Responsive Behaviour
-
-### Mobile: `<640px`
-
-- Single column.
-- Full-width primary action.
-- Hide inspector panel behind drawer or separate route.
-- Search and filters stack vertically.
-- Cards are full width.
-- Entry detail body fills available container but remains readable.
-- Sticky bottom create action is allowed for frequent logging.
-
-### Tablet: `640px - 1024px`
-
-- Two-column card grid where useful.
-- Sidebar may collapse.
-- Filters may wrap.
-- Editor metadata can use two columns.
-
-### Desktop: `>1024px`
-
-- Sidebar visible when useful.
-- Main content constrained.
-- Optional inspector panel.
-- Card grid can use 2 to 3 columns.
-- Long-form content remains constrained.
-
----
-
-## Accessibility Requirements
-
-- All interactive elements must be keyboard reachable.
-- Use visible focus states.
-- Inputs must have labels.
-- Icon-only buttons must have accessible names.
-- Error messages must be close to the relevant field.
-- Do not rely on colour alone for status.
-- Destructive actions must have confirmation.
-- Loading states should not cause major layout shift.
-- Text contrast should meet WCAG AA.
-
----
-
-## Recommended TypeScript Models
-
-```ts
-export type LogBookCategory =
-  | "work"
-  | "development"
-  | "deployment"
-  | "review"
-  | "incident"
-  | "learning"
-  | "personal";
-
-export type LogBook = {
-  id: string;
-  title: string;
-  description?: string;
-  category: LogBookCategory;
-  entryCount: number;
-  lastUpdatedAt?: string;
-  pinned?: boolean;
-};
-
-export type LogEntryStatus =
-  | "draft"
-  | "active"
-  | "waiting"
-  | "blocked"
-  | "done"
-  | "archived";
-
-export type LogEntry = {
-  id: string;
-  logBookId: string;
-  title: string;
-  summary?: string;
-  body?: string;
-  status: LogEntryStatus;
-  tags: string[];
-  createdAt: string;
-  updatedAt?: string;
-  occurredAt?: string;
-  aiContext?: string;
-  actionItems?: Array<{
-    id: string;
-    title: string;
-    done: boolean;
-  }>;
-};
+Be concrete. Avoid vague advice.
 ```
 
 ---
 
-## AI Prompt Pack
-
-### Prompt 1: Create the Full Log Books Feature
+## Prompt 3: Interior Page Layout Generator
 
 ```txt
-You are a senior product designer and frontend engineer. Build a polished Log Books feature using the design document below as strict requirements.
+You are designing the interior pages for a physical Amazon KDP logbook.
 
-Goal:
-Create a clean, calm, professional Log Books UI where users can create, browse, filter, read, and edit structured log entries.
+Use this design spec:
+[PASTE DESIGN SPEC]
 
-Hard requirements:
-- Use the provided design tokens for typography, colours, spacing, radius, shadows, and layout widths.
-- Build mobile first.
-- Use reusable components, not one giant page.
-- Include LogBooksPage, LogBookCard, LogEntryList, LogEntryDetail, LogEntryEditor, StatusBadge, TagPill, EmptyState, and FilterBar.
-- Include default, hover, focus, loading, disabled, empty, and error states where relevant.
-- Use realistic sample data.
-- Keep long-form text max width around 680px to 760px.
-- Use clear hierarchy with weight, contrast, colour, and spacing instead of only large font sizes.
-- Avoid excessive borders.
-- Include accessible labels, keyboard focus states, and aria-labels for icon-only buttons.
-
-Before coding:
-1. Briefly summarize the component structure.
-2. List the files you will create/change.
-3. Confirm the design tokens you will use.
-
-Then implement the feature.
-
-Design document:
-[PASTE THIS DOCUMENT HERE]
-```
-
-### Prompt 2: Refactor an Existing Log Books UI
-
-```txt
-You are refactoring an existing Log Books UI to match a polished Refactoring UI-inspired design system.
-
-Review the current implementation and improve it using these rules:
-- Replace random one-off spacing with the spacing scale from the design document.
-- Improve hierarchy using font weight, contrast, muted metadata, and spacing.
-- Increase breathing room where the UI feels cramped.
-- Reduce unnecessary borders and use background, spacing, and subtle shadows instead.
-- Constrain long-form content to readable widths.
-- Make empty states intentional and useful.
-- Ensure mobile layout works first, then enhance desktop.
-- Keep existing business logic intact unless it conflicts with usability.
-
-Output format:
-1. Issues found in the current UI.
-2. Design changes you will make.
-3. Component/file changes.
-4. Implementation.
-5. Final checklist against the design document.
-
-Design document:
-[PASTE THIS DOCUMENT HERE]
-```
-
-### Prompt 3: Generate Only the Component Library
-
-```txt
-Create only the reusable component library for Log Books. Do not build the full page yet.
-
-Components required:
-- Button variants: primary, secondary, tertiary, destructive
-- StatusBadge
-- TagPill
-- LogBookCard
-- LogEntryRow
-- EmptyState
-- Field, Textarea, Select styling
-- SectionHeader
-- MetadataStrip
+Create the complete interior page layout plan.
 
 Requirements:
-- Use exact tokens from the design document.
-- Include TypeScript props.
-- Include accessible labels and focus states.
-- Include sample usage for each component.
-- Do not use random colours or arbitrary pixel values.
-- Keep components composable and easy to reuse.
-
-Design document:
-[PASTE THIS DOCUMENT HERE]
-```
-
-### Prompt 4: Create a Log Entry Editor Form
-
-```txt
-Build a Log Entry Editor form using the provided design system.
-
-Fields:
-- Title
-- Log book/category
-- Date/time
-- Status
-- Tags
-- Summary
-- Body sections
-- Action items
-- AI context
-
-Rules:
-- Single-column form by default.
-- Use two columns only for short metadata fields on tablet/desktop.
-- Inputs should be 44px to 48px high.
-- Textareas should start at 120px to 180px high.
-- Labels should be 6px to 8px from their field.
-- Field groups should have 20px to 24px vertical gaps.
-- Include validation error states.
-- Include save, cancel, and save draft actions.
-- Use a clear button hierarchy.
-
-Design document:
-[PASTE THIS DOCUMENT HERE]
-```
-
-### Prompt 5: Create the Empty State and First-Use Flow
-
-```txt
-Design and implement the first-use empty state for Log Books.
-
-Requirements:
-- No pointless filters or tabs before content exists.
-- Include a friendly title, short explanation, primary action, and optional template suggestions.
-- Make it visually polished but not playful.
-- Use max width around 520px.
-- Use 24px padding on mobile and 40px padding on desktop.
-- Include template cards for Daily Work Log, Development Log, Deployment Log, PR Review Log, Incident Log, and Learning Log.
-- Ensure the primary action is obvious.
-
-Design document:
-[PASTE THIS DOCUMENT HERE]
-```
-
-### Prompt 6: AI Review Prompt After Implementation
-
-```txt
-Review the implemented Log Books UI against this design document.
-
-Check specifically for:
-- Random arbitrary spacing or colour values
-- Weak visual hierarchy
-- Cramped areas
-- Too many borders
-- Long unreadable text lines
-- Missing empty states
-- Missing loading/error/disabled states
-- Poor mobile behaviour
-- Inconsistent typography
-- Missing accessibility labels/focus states
-- Destructive actions that are too visually aggressive outside confirmation flows
+- Use fixed print dimensions, not responsive layout.
+- Use inches or points for spacing.
+- Keep all content inside safe margins.
+- Use generous handwriting space.
+- Avoid heavy borders and clutter.
+- Use consistent typography, line weights, and spacing.
+- Design for black-and-white print unless the spec says otherwise.
+- Include page numbers if appropriate.
 
 Output:
-1. Pass/fail summary.
-2. Exact issues found.
-3. Suggested fixes.
-4. Priority order.
-5. Code-level recommendations.
+1. Full page sequence from page 1 to final page.
+2. For each unique page type, provide a precise layout blueprint.
+3. For repeated pages, define the master template and repeat count.
+4. Provide suggested text for instructions and prompts.
+5. Provide a QA checklist for the finished PDF.
 
-Design document:
-[PASTE THIS DOCUMENT HERE]
+Also include a compact table with page type, page count, repeats, purpose, and notes.
 ```
 
 ---
 
-## Implementation Acceptance Checklist
+## Prompt 4: KDP Cover Brief Generator
 
-### Visual Design
+```txt
+You are creating a professional KDP paperback cover brief for a physical logbook.
 
-- [ ] Uses the defined colour tokens.
-- [ ] Uses the defined spacing scale.
-- [ ] Uses the defined typography scale.
-- [ ] Uses consistent radius values.
-- [ ] Uses shadows sparingly.
-- [ ] Avoids unnecessary borders.
-- [ ] Has clear visual hierarchy.
-- [ ] Has enough breathing room.
+Use this product concept and interior spec:
+[PASTE PRODUCT CONCEPT AND INTERIOR SPEC]
 
-### Layout
+Create a cover brief that a designer or image-generation AI can follow.
 
-- [ ] Mobile layout works first.
-- [ ] Desktop layout uses fixed readable widths.
-- [ ] Long-form content does not exceed 760px width.
-- [ ] Sidebar does not shrink below a usable width.
-- [ ] Inspector panel is optional and not required on mobile.
+Include:
 
-### Components
+1. MARKET POSITIONING
+- target buyer
+- emotional promise
+- what the cover must communicate in 2 seconds
 
-- [ ] `LogBooksPage` exists.
-- [ ] `LogBookCard` exists.
-- [ ] `LogEntryList` exists.
-- [ ] `LogEntryDetail` exists.
-- [ ] `LogEntryEditor` exists.
-- [ ] `StatusBadge` exists.
-- [ ] `TagPill` exists.
-- [ ] `EmptyState` exists.
-- [ ] `FilterBar` exists.
+2. FRONT COVER
+- title hierarchy
+- subtitle placement
+- author/brand placement
+- visual motif
+- composition
+- typography direction
+- colour palette
+- texture or pattern guidance
+- thumbnail readability rules
 
-### States
+3. BACK COVER
+- headline
+- short sales copy
+- bullet benefits
+- who it is for
+- what is inside
+- barcode safe area reminder
 
-- [ ] Empty state exists.
-- [ ] Loading state exists.
-- [ ] Error state exists.
-- [ ] Disabled state exists.
-- [ ] Hover state exists.
-- [ ] Focus-visible state exists.
-- [ ] Active/selected state exists.
+4. SPINE
+- whether spine text should be included based on page count
+- title/author placement guidance
+- warning if page count is below KDP spine text minimum
 
-### Accessibility
+5. TECHNICAL NOTES
+- single full-wrap cover PDF
+- include bleed
+- keep text inside safe area
+- leave barcode area clear unless own barcode is supplied
+- use high-resolution images
+- flatten transparencies
+- embed fonts
 
-- [ ] Inputs have labels.
-- [ ] Icon buttons have accessible names.
-- [ ] Keyboard navigation works.
-- [ ] Focus states are visible.
-- [ ] Colour is not the only status indicator.
-- [ ] Destructive actions have confirmation.
+6. THREE DISTINCT COVER DIRECTIONS
+For each direction include name, mood, layout, colours, typography, motif, and why it would stand out.
 
-### AI Context
-
-- [ ] Each log entry has an optional AI context field.
-- [ ] Templates guide users to capture useful future context.
-- [ ] Log summaries are concise and scannable.
-- [ ] Action items are clearly separated from notes.
+Do not copy competitor designs. Create an original direction based on the market gap.
+```
 
 ---
 
-## Final Instruction to AI Builders
+## Prompt 5: Finished PDF Review
 
-Do not optimize for novelty. Optimize for clarity, repeatability, hierarchy, and calm usability.
+```txt
+You are reviewing a finished physical logbook PDF for Amazon KDP.
 
-The best Log Books UI should feel like a reliable workbench: structured enough to guide the user, spacious enough to think clearly, and polished enough that the user trusts it with important notes.
+I will provide screenshots or exported page images from the cover and interior.
+
+Review against this design spec:
+[PASTE DESIGN SPEC]
+
+Check:
+- Does the cover communicate the niche clearly at thumbnail size?
+- Is the title readable and well positioned?
+- Does the cover avoid competitor clichés while still fitting the niche?
+- Is the interior spacious enough for handwriting?
+- Are margins and gutters safe?
+- Are field labels readable?
+- Are lines too dark, too light, too thick, or too thin?
+- Is the page flow logical?
+- Are review/summary pages useful?
+- Is the barcode area clear?
+- Are there any likely KDP rejection risks?
+
+Output:
+1. Pass/fail summary
+2. Highest-risk issues
+3. Design polish issues
+4. Usability issues
+5. KDP technical risks
+6. Exact fixes to make before upload
+```
+
+---
+
+## Final QA Checklist
+
+### Interior
+
+- [ ] Correct trim size.
+- [ ] Fixed-size print pages, not app screens.
+- [ ] Margins and gutter are safe.
+- [ ] Important content is away from trim edge.
+- [ ] Field labels are readable.
+- [ ] Writing spaces are large enough for real handwriting.
+- [ ] Line weights are consistent.
+- [ ] Repeated pages are consistent.
+- [ ] Review pages add real value.
+- [ ] Fonts are embedded.
+- [ ] No placeholder text remains.
+- [ ] No copied competitor wording or layout remains.
+
+### Cover
+
+- [ ] Single wraparound PDF: back + spine + front.
+- [ ] Correct KDP template size for trim, paper, ink, and page count.
+- [ ] Bleed included.
+- [ ] Text inside safe areas.
+- [ ] Barcode area clear.
+- [ ] No spine text if page count is too low.
+- [ ] Title readable at Amazon thumbnail size.
+- [ ] Images are high resolution.
+- [ ] Transparencies flattened.
+- [ ] Fonts embedded.
+- [ ] No template marks or guide text remain.
+
+## Final Instruction
+
+Design the logbook as a real printed tool. It should look strong in Amazon search, feel useful when written in, solve buyer complaints found in competitor reviews, and export cleanly as KDP-ready PDFs.
