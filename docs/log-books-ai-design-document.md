@@ -1,76 +1,35 @@
-# Log Books KDP Design Document + Prompt System
-
-## Purpose
-
-This is the single source of truth for creating **physical log books for Amazon KDP** with AI.
-
-Use this file at the beginning of an AI session as the governing design document. The AI should treat this file as the design guide, workflow guide, and prompt system for creating a better original physical logbook.
-
-This is for printed KDP products, not web apps or mobile apps.
-
-Use this document to create:
-
-- competitor analysis reports
-- product gap maps
-- superior logbook concepts
-- modern minimalist cover directions
-- interior page structures
-- print-ready manuscript PDF instructions
-- KDP cover PDF instructions
-- final QA checklists before upload
-
----
-
-## How To Use This File In An AI Session
-
-At the beginning of a new AI session, upload or provide this file:
-
-`log-books-ai-design-document.md`
-
-Then use the prompts in this document.
-
-The prompts reference this file by name. Do not replace those references with pasted text. The AI should understand that `log-books-ai-design-document.md` is already loaded in the session and must be used as the governing design document.
-
-Recommended starting message:
-
-```txt
-I have provided a file named log-books-ai-design-document.md. Treat it as the governing design document for this session. Use it for all physical Amazon KDP logbook design, competitor analysis, cover direction, interior structure, prompt generation, and QA review.
-```
-
----
-
 ## Important Style Direction
 
-The target style is **modern, minimalist, polished, and practical**.
+The target style is **minimalist, polished, and practical**.
 
 The logbook should feel inspired by:
 
-- Refactoring UI principles
-- Tailwind-style spacing systems
-- clean modern product design
-- calm hierarchy
-- strong typography
-- thoughtful whitespace
-- useful structure
+* Refactoring UI principles
+* Tailwind-style spacing systems
+* clean product design
+* calm hierarchy
+* strong typography
+* thoughtful whitespace
+* useful structure
 
 This is still a **physical print product**, not a web app.
 
 Do not create:
 
-- responsive layouts
-- buttons
-- hover states
-- app components
-- mobile screens
-- web page cards
+* responsive layouts
+* buttons
+* hover states
+* app components
+* mobile screens
+* web page cards
 
 Translate good UI thinking into print:
 
-- spacing systems become print spacing and field grouping
-- visual hierarchy becomes cover/title/section hierarchy
-- component consistency becomes reusable page templates
-- Tailwind-style tokens become fixed print tokens for margins, line weights, typography, and repeated page modules
-- UI clarity becomes handwriting usability and low-friction page flow
+* spacing systems become print spacing and field grouping
+* visual hierarchy becomes cover/title/section hierarchy
+* component consistency becomes reusable page templates
+* Tailwind-style tokens become fixed print tokens for margins, line weights, typography, and repeated page modules
+* UI clarity becomes handwriting usability and low-friction page flow
 
 ### ASCII / Wireframe Warning
 
@@ -78,9 +37,9 @@ Any ASCII diagrams, text blueprints, or block layouts in this document are **str
 
 They are not the final visual style.
 
-Do not copy the ASCII look into the final design. Convert structural blueprints into refined print layouts with clean spacing, subtle lines, modern typography, and strong hierarchy.
+Do not copy the ASCII look into the final design. Convert structural blueprints into refined print layouts with clean spacing, subtle lines, typography, and strong hierarchy.
 
----
+\---
 
 ## Core Working Rule
 
@@ -101,83 +60,95 @@ Do not stop because the input is incomplete. Make reasonable inferences and clea
 
 Do not copy competitor covers, titles, layouts, wording, illustrations, or unique concepts.
 
----
+\---
 
 ## How To Use With Competitor Screenshots Only
 
 When the user only uploads images and gives little explanation, follow this approach:
 
 1. **Identify what is visible**
-   - visible titles
-   - niche indicators
-   - cover styles
-   - interior fields
-   - repeated page structures
-   - buyer-use clues
 
+   * visible titles
+   * niche indicators
+   * cover styles
+   * interior fields
+   * repeated page structures
+   * buyer-use clues
 2. **Infer the niche**
-   - state the likely niche
-   - state confidence level
-   - list what evidence supports the inference
 
+   * state the likely niche
+   * state confidence level
+   * list what evidence supports the inference
 3. **Research to fill gaps**
-   - search for common niche expectations
-   - research common buyer complaints
-   - check common trim/page-count patterns when relevant
-   - research terminology used by real buyers
 
+   * search for common niche expectations
+   * research common buyer complaints
+   * check common trim/page-count patterns when relevant
+   * research terminology used by real buyers
 4. **Do not over-copy**
-   - competitor material is for analysis only
-   - create a new product angle
-   - create original cover and page structures
 
+   * competitor material is for analysis only
+   * create a new product angle
+   * create original cover and page structures
 5. **Use this file**
-   - physical print design rules come from `log-books-ai-design-document.md`
-   - use modern minimalist style, not ASCII/blocky styling
 
+   * physical print design rules come from `log-books-ai-design-document.md`
+   * use minimalist style, not ASCII/blocky styling
 6. **Produce build-ready outputs**
-   - product concept
-   - cover direction
-   - interior page list
-   - prompt pack for cover/interior generation
-   - QA checklist
 
----
+   * product concept
+   * cover direction
+   * interior page list
+   * prompt pack for cover/interior generation
+   * QA checklist
 
-## Physical KDP Working Assumptions
+\---
 
-Always verify final specs in KDP before upload. Use these as sensible working assumptions.
+## Physical KDP Working Assumptions — Verified
 
-### Common Logbook Format
+Everything in this section is confirmed directly against [KDP's official Trim Size, Bleed, and Margins page](https://kdp.amazon.com/en_US/help/topic/GVBQ3CMEQW3W2VL6), not carried forward from assumption. Re-verify against that page if it's been more than a few months since this doc was last checked — Amazon does update these occasionally.
 
-Default interior recommendation:
+### Trim Size
 
-- Trim size: `6 x 9 in`
-- Interior: black ink on white paper
-- Interior style: no bleed unless artwork or background reaches the edge
-- Page count: commonly `100-120 pages`, adjusted by niche
-- Cover: full wraparound PDF with bleed
-- Interior: separate manuscript PDF
+6×9in is the default recommendation for this product type — it supports 24–828 pages on black ink/white paper, which comfortably covers any logbook in the 100–150 page range this doc targets.
 
-Useful trim alternatives:
+Useful trim alternatives (all valid 24–828 pages, black ink/white paper, "regular" pricing tier):
 
-- `5 x 8 in`: compact and portable
-- `5.5 x 8.5 in`: journal-like and balanced
-- `7 x 10 in`: better for detailed trackers
-- `8.5 x 11 in`: workbook/tracker feel
+* `5 x 8 in`: compact and portable
+* `5.5 x 8.5 in`: journal-like and balanced
+* `6 x 9 in`: default recommendation
+* `7 x 10 in`: **large trim** — better for detailed trackers, costs more to print
+* `8.5 x 11 in`: **large trim** — workbook/tracker feel, only 24–590 pages supported, costs more to print
 
-### Interior Margin Defaults
+### Interior Margins — Official Minimums
 
-For a `6 x 9 in`, no-bleed, 100-120 page logbook:
+The inside (gutter) margin scales up as the book gets thicker. Outside, top, and bottom margins stay fixed regardless of page count.
 
-- Inside/gutter: `0.45 in` working value
-- Outside: `0.35 in`
-- Top: `0.40 in`
-- Bottom: `0.45 in`
+|Page count|Inside (gutter) margin|Outside/top/bottom (no bleed)|Outside/top/bottom (with bleed)|
+|-|-|-|-|
+|24–150|0.375in|0.25in|0.375in|
+|151–300|0.5in|0.25in|0.375in|
+|301–500|0.625in|0.25in|0.375in|
+|501–700|0.75in|0.25in|0.375in|
+|701–828|0.875in|0.25in|0.375in|
 
-For page counts above 150, increase the gutter.
+**Working defaults for a 24–150 page, no-bleed, 6×9in logbook** (confirmed safely above every minimum above, not just assumed):
 
-Never place important text, boxes, page numbers, or icons close to the trim edge.
+* Inside/gutter: `0.45 in` (0.075in of margin above the 0.375in minimum)
+* Outside: `0.35 in` (0.10in above the 0.25in minimum)
+* Top: `0.40 in` (0.15in above the 0.25in minimum)
+* Bottom: `0.45 in` (0.20in above the 0.25in minimum)
+
+If a future project exceeds 150 pages, increase the gutter to at least 0.5in per the table above. Outside/top/bottom stay at 0.25in minimum regardless of page count — no need to increase those for a longer book.
+
+### Bleed
+
+* **Covers** always require bleed (0.125in on all outer edges), regardless of the interior's bleed setting.
+* **Interior** bleed is only needed if any interior page has an image, background, or illustration reaching the trim edge. A guided logbook with margin-safe form fields does not need interior bleed — use **no bleed**.
+* If interior bleed is ever needed, the math is **not symmetric like a cover** — the gutter/spine side never bleeds, only the outer three edges do:
+
+  * Page width with bleed = trim width + 0.125in (outside edge only)
+  * Page height with bleed = trim height + 0.25in (0.125in top + 0.125in bottom)
 
 ### Cover Technical Rules
 
@@ -187,76 +158,85 @@ The cover should be a single full-wrap PDF:
 Back cover + spine + front cover
 ```
 
+Full wrap width = bleed (0.125in) + back cover width + spine width + front cover width + bleed (0.125in).
+Full wrap height = trim height + 0.25in (0.125in bleed top + bottom).
+
+Spine width formula (white paper): `(page count × 0.002252) + 0.06 = spine width in inches`. Recalculate this any time the final page count changes — it's a hard dependency, not a rough estimate.
+
 The cover must account for:
 
-- trim size
-- page count
-- paper type
-- ink type
-- spine width
-- bleed
-- safe zones
-- barcode area
-- matte or glossy finish
+* trim size
+* page count
+* paper type
+* ink type
+* spine width
+* bleed
+* safe zones
+* barcode area
+* matte or glossy finish
 
-Do not add spine text unless the page count supports it. If uncertain, omit spine text or verify in KDP's cover calculator/template generator.
+Do not add spine text unless the page count comfortably supports it (KDP requires 79+ pages minimum for spine text to be an option at all). Below roughly 110–115 pages, a spine may be too narrow for text to stay comfortably legible — verify with a physical proof rather than trusting the math alone.
 
----
+\---
 
 ## Print Design Philosophy
 
-### 1. Systematize Everything
+### 1\. Systematize Everything
 
 Use a small set of repeated decisions:
 
-- same trim size
-- same margins
-- same line weights
-- same label sizes
-- same heading hierarchy
-- same field spacing
-- same page header/footer style
-- same cover/interior personality
+* same trim size
+* same margins
+* same line weights
+* same label sizes
+* same heading hierarchy
+* same field spacing
+* same page header/footer style
+* same cover/interior personality
 
 Avoid random field heights, random margins, random fonts, and inconsistent spacing.
 
-### 2. Start Spacious
+### 2\. Start Spacious
 
 A logbook must be written in by hand. Start with more space than expected, then tighten only where needed.
 
-### 3. Build Hierarchy
+### 3\. Build Hierarchy
 
 Guide the eye with:
 
-- type size
-- weight
-- whitespace
-- contrast
-- section dividers
-- field grouping
+* type size
+* weight
+* whitespace
+* contrast
+* section dividers
+* field grouping
 
 Do not make every label bold, boxed, or equally loud.
 
-### 4. Avoid Ambiguous Spacing
+### 4\. Avoid Ambiguous Spacing
 
 Fields that belong together should be close. Separate sections should have clearly larger gaps.
 
-### 5. Avoid Too Many Borders
+### 5\. Avoid Too Many Borders
 
 Do not create a page full of heavy boxes. Use light lines, whitespace, subtle dividers, and simple labels.
 
-### 6. Design For Handwriting
+### 6\. Design For Handwriting
 
 Default writing-space rules:
 
-- single writing line: about `0.28-0.35 in` high
-- compact writing line: about `0.24 in` high
-- notes lines: about `0.32-0.38 in` high
-- checkbox: about `0.12-0.16 in`
-- rating circle: about `0.16-0.22 in`
-- table row: about `0.32-0.45 in`
+* single writing line: about `0.28-0.35 in` high
+* compact writing line: about `0.24 in` high — use this only for reference/lookup tables (e.g. a quick index) where entries are a few words, not for primary writing fields
+* notes lines: about `0.32-0.38 in` high
+* checkbox: about `0.12-0.16 in`
+* rating circle: about `0.16-0.22 in`
+* table row: about `0.32-0.45 in`
 
----
+### 7\. Verify Geometrically Before Finalizing
+
+Hand-tracing the vertical math for a few representative pages is not sufficient — it's exactly how a real spacing bug slipped through undetected on a past project (see "Pre-Flight Geometry Audit" below). Before treating any interior as final, run every unique page type through the actual drawing code with an instrumented/recording canvas and check the real output, not a manual re-derivation of it.
+
+\---
 
 ## Interior Design Tokens
 
@@ -264,164 +244,219 @@ Default writing-space rules:
 
 Use simple print-safe fonts.
 
-Suggested directions:
+Suggested directions to think of niche font styles:
 
-- Professional: Garamond, Palatino, Baskerville-style serif
-- Modern: Arial, Helvetica, Inter-style sans serif
-- Warm journal: elegant serif heading + clean sans label font
-- Technical logbook: clean sans serif with strong structure
+* Professional: Garamond, Palatino, Baskerville-style serif
+* Modern: Arial, Helvetica, Inter-style sans serif
+* Warm journal: elegant serif heading + clean sans label font
+* Technical logbook: clean sans serif with strong structure
 
 Suggested interior sizes:
 
-| Use | Size | Notes |
-|---|---:|---|
-| Page title | 14-18 pt | clear but not huge |
-| Section title | 10-12 pt | semibold |
-| Field label | 7.5-9 pt | readable and quiet |
-| Helper text | 7-8 pt | use lightly |
-| Page number | 7-8 pt | subtle |
+|Use|Size|Notes|
+|-|-:|-|
+|Page title|14-18 pt|clear but not huge|
+|Section title|10-12 pt|semibold|
+|Field label|7.5-9 pt|readable and quiet|
+|Helper text|7-8 pt|use lightly|
+|Page number|7-8 pt|subtle|
 
 Rules:
 
-- Do not use text below 7 pt.
-- Embed fonts in exported PDFs.
-- Use decorative fonts only for cover or large headings.
-- Do not use hard-to-read fonts for functional labels.
+* Do not use text below 7 pt.
+* Embed fonts in exported PDFs. Note: a "Helvetica" (or other base-14) font reference may appear in a font-embedding check even when every visible glyph uses a properly embedded font — this is a harmless artifact of some PDF generation tools auto-registering the standard 14 fonts as available resources, not an actual embedding failure. Confirm by checking which fonts are actually used for visible text, not just which fonts are listed as resources.
+* Use decorative fonts only for cover or large headings.
+* Do not use hard-to-read fonts for functional labels.
 
 ### Line Weights
 
-| Use | Weight |
-|---|---:|
-| faint writing lines | 0.25 pt |
-| normal writing lines | 0.5 pt |
-| section dividers | 0.75 pt |
-| rare emphasis | 1 pt |
+|Use|Weight|
+|-|-:|
+|faint writing lines|0.25 pt|
+|normal writing lines|0.5 pt|
+|section dividers|0.75 pt|
+|rare emphasis|1 pt|
 
 Greyscale defaults:
 
-- Main text: `#222222`
-- Secondary text: `#666666`
-- Writing lines: `#D9D9D9`
-- Dividers: `#B8B8B8`
+* Main text: `#222222`
+* Secondary text: `#666666`
+* Writing lines: `#D9D9D9`
+* Dividers: `#B8B8B8`
 
 ### Print Spacing Scale
 
-| Token | Size | Use |
-|---|---:|---|
-| XS | 0.05 in | tiny label/line gap |
-| SM | 0.10 in | tight grouping |
-| MD | 0.16 in | normal field spacing |
-| LG | 0.24 in | section spacing |
-| XL | 0.35 in | major blocks |
-| 2XL | 0.50 in | large breaks |
+|Token|Size|Use|
+|-|-:|-|
+|XS|0.05 in|tiny label/line gap|
+|SM|0.10 in|tight grouping|
+|MD|0.16 in|normal field spacing|
+|LG|0.24 in|section spacing|
+|XL|0.35 in|major blocks|
+|2XL|0.50 in|large breaks|
 
----
+\---
+
+## Print Component Patterns
+
+These are reusable structural components validated across a full 132-page build — treat them as defaults for any future logbook using a running header/footer and checkbox fields.
+
+### Running Header + Footer ("Chrome")
+
+A consistent header/footer treatment repeated on every interior page reads as *systematic* rather than assembled page-by-page. Recommended structure:
+
+* **Header:** book title (small caps, left) + page-specific label (right, e.g. section or entry name), both sitting **inside** the top margin — not above it. Position the header text roughly 0.15–0.20in below the top safe-margin boundary, with its hairline rule another 0.08–0.10in below the text. Do not place header text above the margin boundary even by a small amount — it reads as encroaching on the trim edge even when technically still inside KDP's hard minimum.
+* **Footer:** page number, centered, with an optional small brand mark (e.g. a repeated icon) directly above it and thin hairline rules flanking both — sitting inside the bottom margin.
+* **Right-aligned header text:** if using letter-spaced/tracked text, make sure the *actual* rendering routine (not just the width-calculation routine) applies the tracking — a mismatch between the two causes right-aligned text to fall short of the true margin edge, leaving an unintended gap. Test by confirming the rightmost character's true rendered edge lands exactly at the intended boundary.
+
+### Header-to-First-Section Spacing
+
+Where a page has both the running header (with its own rule) and a numbered section header (with its own rule) directly beneath it, leave **at least 0.25–0.30in** between the two rules. Anything tighter reads as a cluttered double-line directly under the header, even though both rules are individually correct. This is easy to miss on the most content-dense page types specifically, since those are the pages where the temptation to save vertical space is strongest — check those pages explicitly, not just the spacious front-matter pages.
+
+### Checkbox Fields
+
+* Size: `0.12–0.16in` per the handwriting-space token table — do not go smaller for the sake of fitting more per row.
+* **Vertical alignment:** center the checkbox on the label text's cap-height band, not on the text baseline. A checkbox positioned relative to the baseline alone will visually float below its label. Concretely: if drawing a checkbox of height H next to text with baseline at y and font size S, position the checkbox's bottom edge at approximately `y - 0.02` to `y - 0.03` (in inches), not flush with the baseline itself.
+* **Grid consistency:** if a section has two related checkbox rows (e.g. "Form:" and "Type:"), use the *same* column grid for both, or better, make each its own clean single row rather than an uneven multi-row grid. Mismatched grids between adjacent rows read as misaligned even when each row is internally consistent.
+
+\---
 
 ## Recommended Page Types
 
 A strong logbook should usually include more than one repeated generic page.
 
-### 1. Title Page
+### 1\. Title Page
 
 Include:
 
-- book title
-- owner name
-- start date
-- end date
+* book title
+* owner name
+* start date
+* end date
 
-### 2. How To Use This Logbook
-
-Include:
-
-- 3-5 simple steps
-- how often to fill it in
-- how often to review it
-- explanation of symbols, ratings, or sections
-
-### 3. Setup Or Goal Page
+### 2\. How To Use This Logbook
 
 Include:
 
-- user's goal
-- starting point
-- constraints
-- what success looks like
+* 3-5 simple steps
+* how often to fill it in
+* how often to review it
+* explanation of symbols, ratings, or sections
 
-### 4. Repeating Log Entry Page
+### 3\. Setup Or Goal Page
 
 Include:
 
-- date/session
-- core tracking fields
-- checklist or rating if useful
-- main notes area
-- observations
-- next action or follow-up
+* user's goal
+* starting point
+* constraints
+* what success looks like
 
-### 5. Review Page
+### 4\. Repeating Log Entry Page
+
+Include:
+
+* date/session
+* core tracking fields
+* checklist or rating if useful
+* main notes area
+* observations
+* next action or follow-up
+
+### 5\. Review Page
 
 Add review pages every 7, 14, 30, or 50 entries depending on the niche.
 
 Include:
 
-- wins
-- repeated patterns
-- what worked
-- what needs adjustment
-- next focus
+* wins
+* repeated patterns
+* what worked
+* what needs adjustment
+* next focus
 
-### 6. Notes Pages
+### 6\. Notes Pages
 
 Add a few pages at the back:
 
-- lined
-- dotted
-- grid
-- blank
+* lined
+* dotted
+* grid
+* blank
 
----
+\---
+
+## Page-Parity Rule for Two-Page-Spread Designs
+
+**Critical, and not covered anywhere in KDP's own documentation.** Any repeating entry format that splits content across a left page and a right page (e.g. "Product Profile" on the left, "Session \& Experience" on the right) depends entirely on those two pages landing on the correct physical sides — get this wrong and the two halves of every single entry will be split across the wrong facing pages for the entire book.
+
+**The rule:** even page numbers are always left-hand (verso), odd page numbers are always right-hand (recto). A page only visually faces the *next* page number if it is even — an odd page faces the *previous* page instead. For a spread's left content to face its right content, the left half must land on an even page and the right half on the very next (odd) page.
+
+**Practical check before finalizing any page sequence:** count every page that comes before the repeating spread section starts (title, how-to-use, legend, index, etc. — all of front matter).
+
+* If that count is **odd**, the spread section starts on an even page and will pair correctly.
+* If that count is **even**, the spread section starts on an odd page and will **not** pair correctly — fix this before treating the layout as final, not after.
+
+**Fix if front matter comes out even:** add or remove exactly one page anywhere in front matter (split one reference section across an extra page, add a half-title, etc.) rather than restructuring the whole document. This same check applies to any other two-page unit meant to be seen together — review spreads, a favorites/summary spread — not just the main repeating entry.
+
+**Verify by testing the real output, not just the arithmetic:** after building the file, extract the text of the first spread's two pages directly from the generated PDF and confirm page N is even and contains the "left" content while page N+1 is odd and contains the "right" content. Checking the actual rendered file catches transcription errors in the page-counting logic that pure arithmetic can miss.
+
+\---
 
 ## Repeating Log Entry Structural Blueprint
 
-This is a wireframe only. Convert it into a refined modern print layout.
+This is a wireframe only. Convert it into a refined print layout.
 
 ```txt
-[PAGE TITLE / ENTRY TYPE]
+\\\[PAGE TITLE / ENTRY TYPE]
 
-Date: ____________       Time/Session: ____________
+Date: \\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_       Time/Session: \\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
 
 Primary fields:
-Field 1: _______________     Field 2: _______________
-Field 3: _______________     Field 4: _______________
+Field 1: \\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_     Field 2: \\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
+Field 3: \\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_     Field 4: \\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
 
 Checklist / rating:
-[ ] Item     [ ] Item     Rating: ○ ○ ○ ○ ○
+\\\[ ] Item     \\\[ ] Item     Rating: ○ ○ ○ ○ ○
 
 Main notes:
-____________________________________________________
-____________________________________________________
-____________________________________________________
-____________________________________________________
+\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
+\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
+\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
+\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
 
 Observations:
-____________________________________________________
-____________________________________________________
+\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
+\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
 
 Next action / follow-up:
-____________________________________________________
+\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
 ```
 
 Rules:
 
-- Fast metadata goes at the top.
-- Objective tracking fields come before reflection fields.
-- The largest writing space should be for the most important user input.
-- End with action, follow-up, or summary.
-- Do not overload one page with too many prompts.
-- Do not keep the final page blocky or ASCII-like.
+* Fast metadata goes at the top.
+* Objective tracking fields come before reflection fields.
+* The largest writing space should be for the most important user input.
+* End with action, follow-up, or summary.
+* Do not overload one page with too many prompts.
+* Do not keep the final page blocky or ASCII-like.
 
----
+\---
+
+## Pre-Flight Geometry Audit
+
+Before treating any interior as final, build a lightweight instrumented canvas that mimics the real drawing API (setFont, drawString, line, rect, circle, etc.) but records geometry instead of rendering, then run **every unique page-drawing function** through it — not just a visual spot-check of a few pages. This was the single most effective QA step across the whole project; several real defects were only caught this way, and one (a header sitting too close to the trim edge) was initially "fixed" based on hand-calculated math that turned out to still miss a related, undetected issue nearby.
+
+At minimum, check for each page type:
+
+* **Content floor/ceiling:** does anything drawn fall outside the safe content box, excluding the intentional header/footer chrome?
+* **Line clustering:** are any two horizontal rules closer together than roughly 0.19–0.20in anywhere on the page? (This catches double-divider clutter automatically, including in places not otherwise being reviewed.)
+* **Consistency across page types:** is the header-to-first-content gap the same on every page type that has one, not just the ones that happened to get checked by hand?
+
+Hand-tracing the arithmetic for one or two representative pages is a useful sanity check during development, but is not a substitute for this — it only verifies what you thought to check, and real bugs tend to hide exactly in what wasn't thought to check.
+
+\---
 
 ## Cover Design System
 
@@ -451,34 +486,41 @@ Pick one clear direction.
 
 #### Premium Minimal
 
-- strong typography
-- lots of negative space
-- limited colour palette
-- subtle icon or linework
+* strong typography
+* lots of negative space
+* limited colour palette
+* subtle icon or linework
 
 #### Warm Guided Journal
 
-- soft neutrals
-- gentle serif/sans pairing
-- calm emotional tone
+* soft neutrals
+* gentle serif/sans pairing
+* calm emotional tone
 
 #### Utility / Workshop
 
-- practical grid
-- strong labels
-- functional, durable feeling
+* practical grid
+* strong labels
+* functional, durable feeling
 
 #### Bold Category Standout
 
-- high contrast
-- strong title block
-- instantly readable in thumbnail
+* high contrast
+* strong title block
+* instantly readable in thumbnail
 
 #### Illustrated Niche-Specific
 
-- one strong relevant motif
-- not clipart-heavy
-- clear buyer signal
+* one strong relevant motif
+* not clipart-heavy
+* clear buyer signal
+
+### If Cover Artwork Originates From AI Generation
+
+If any part of the cover (illustration, motif, etc.) is produced by an AI image tool, two things follow:
+
+1. **Disclose it.** KDP requires disclosure of AI-generated content (text, images, translations) during the publishing setup flow. This applies to the artwork even if the surrounding typography is rebuilt separately as real, non-AI-generated type.
+2. **Don't trust the AI-rendered text.** Text baked into an AI-generated image is prone to warped letterforms, incorrect kerning, or subtle misspellings, and is raster-only at whatever resolution the source image was generated at — never final-quality. Extract the artwork/motif only, discard any AI-rendered text entirely, and rebuild all title/subtitle/cover copy as real, embedded type. If the artwork has a flat background, consider making that background transparent rather than color-matching a rectangle — even a near-perfect colour match (within 1/255 per channel) can render as a visible seam once composited, while a transparent cutout composited directly onto the real background guarantees no seam is possible regardless of the source image's exact pixel values.
 
 ---
 
