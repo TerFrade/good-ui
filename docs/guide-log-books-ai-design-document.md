@@ -26,7 +26,7 @@ Examples of possible niches:
 - travel planning guide + trip log
 - hobby guide + practice log
 
-Do not get stuck on any one competitor niche. If competitor examples are dog-related, pet-related, fitness-related, or anything else, use them only to understand **hybrid structure**, **buyer expectations**, and **market gaps**. The output must be adaptable to any guide + logbook niche.
+Do not get stuck on any one competitor niche. If competitor examples are dog-related, pet-related, fitness-related, hobby-related, wellness-related, or anything else, use them only to understand **hybrid structure**, **buyer expectations**, and **market gaps**. The output must be adaptable to any guide + logbook niche.
 
 ---
 
@@ -50,20 +50,27 @@ I have provided a file named guide-log-books-ai-design-document.md. Treat it as 
 
 ## Important Style Direction
 
-The target style is **minimalist, modern, polished, practical, and easy to use**.
+The target style is **editorial, minimalist, warm, polished, practical, and easy to use**.
 
-The guide + logbook hybrid should feel inspired by:
+The visual direction should feel like a refined printed journal or premium workbook, not a web product and not a generic low-content template.
 
-- Refactoring UI principles
-- Tailwind-style spacing systems
-- clean product design
-- calm hierarchy
-- strong typography
-- useful whitespace
-- consistent reusable page systems
-- printed workbook clarity
+Use inspiration from:
 
-This is still a **physical print product**, not a web app.
+- elegant editorial book design
+- premium workbook layouts
+- calm printed journals
+- serif-led typography
+- restrained sans-serif labels
+- generous whitespace
+- fine rules and subtle dividers
+- soft cream or off-white paper feeling
+- muted accent colour blocks
+- sparse line illustrations or simple symbolic motifs
+- carefully spaced guide, worksheet, and log modules
+
+The design may still use systematic spacing and hierarchy principles from good interface design, but only as invisible structure. The final product must look like a printed book.
+
+This is a **physical print product**, not a web app.
 
 Do not create:
 
@@ -73,14 +80,43 @@ Do not create:
 - app components
 - mobile screens
 - web page cards
+- dashboard-style panels
 
-Translate good UI thinking into print:
+Translate product-design discipline into print:
 
 - spacing systems become print spacing and field grouping
 - visual hierarchy becomes chapter/page/section hierarchy
 - component consistency becomes reusable guide modules, worksheet modules, and log-entry modules
-- Tailwind-style tokens become fixed print tokens for margins, type scale, line weights, spacing, callouts, and repeated page modules
+- design tokens become fixed print tokens for margins, type scale, line weights, spacing, callouts, and repeated page modules
 - UI clarity becomes reader comprehension, handwriting usability, and low-friction action flow
+
+### Reference Look
+
+When aiming for the desired style, prefer:
+
+- large elegant serif titles
+- small uppercase sans-serif running headers
+- thin horizontal rules
+- generous top margins
+- calm off-white backgrounds
+- restrained black or dark charcoal text
+- one muted accent colour, such as terracotta, sage, sand, clay, warm grey, or soft blue
+- simple single-line illustration, icon, or motif
+- airy pages with clear structure
+- guide pages that feel like a short editorial handbook
+- log pages that feel structured but not cramped
+
+Avoid:
+
+- harsh neon colours
+- busy clipart
+- heavy full-grid tables
+- thick boxes everywhere
+- overdesigned app-like cards
+- crowded worksheets
+- loud decorative fonts
+- stock-template energy
+- childish cartoon styling unless the niche specifically needs it
 
 ### ASCII / Wireframe Warning
 
@@ -88,7 +124,7 @@ Any ASCII diagrams, text blueprints, or block layouts in this document are **str
 
 They are not the final visual style.
 
-Do not copy the ASCII look into the final design. Convert structural blueprints into refined print layouts with clean spacing, subtle lines, modern typography, and strong hierarchy.
+Do not copy the ASCII look into the final design. Convert structural blueprints into refined print layouts with clean spacing, subtle lines, serif-led typography, and strong editorial hierarchy.
 
 ---
 
@@ -105,6 +141,12 @@ The guide content should not feel like filler. The logbook pages should not feel
 Every guide page should help the reader make better decisions.
 Every worksheet/log page should help the reader apply or measure something from the guide.
 
+Good flow:
+
+```txt
+Concept -> Example -> Checklist -> Worksheet -> Log Entry -> Review
+```
+
 ---
 
 ## Core Working Rule
@@ -118,7 +160,7 @@ If the user provides mostly competitor evidence, the AI must still:
 5. identify visual, functional, educational, emotional, usability, positioning, and production gaps
 6. create a better original guide + logbook concept
 7. use this file as the governing physical print guide
-8. propose a modern minimalist cover direction
+8. propose an editorial minimalist cover direction
 9. propose a practical guide structure and logbook structure
 10. create prompts for generating the cover and interior
 11. review the final result against usefulness, usability, and KDP-readiness
@@ -140,6 +182,7 @@ Competitors are used for:
 - spotting weak tracking/logbook pages
 - finding review complaints
 - identifying opportunities
+- understanding which formats buyers actually find useful
 
 Competitors are not used for copying:
 
@@ -167,6 +210,9 @@ Example transferable patterns:
 - goal-setting worksheet
 - review spread
 - resource/reference page
+- emergency/reference details page
+- practical planning worksheet
+- short guide page followed by matching log page
 
 Example non-transferable details:
 
@@ -175,6 +221,40 @@ Example non-transferable details:
 - niche-specific illustrations
 - exact competitor fields
 - competitor product names
+- exact competitor chapter sequence
+
+---
+
+## Review Mining Lessons To Apply Generically
+
+When mining reviews, look for transferable buyer signals.
+
+Buyers often praise hybrid books when they are:
+
+- easy to read
+- concise but useful
+- practical rather than fluffy
+- organized in one place
+- easy to reference later
+- giftable
+- not too crowded
+- not too sparse
+- full of useful charts, forms, or worksheets
+- supported by simple tips or resources
+- spacious enough for notes
+
+Buyers often complain when books have:
+
+- too much of one page type and not enough of another
+- important trackers missing
+- too little notes space
+- weak previews or unclear interiors
+- print that is too light or too small
+- generic filler pages
+- layout that does not match real use
+- unclear section order
+
+Use these patterns for any niche. Do not keep the dog-specific details unless the actual product is dog-related.
 
 ---
 
@@ -393,18 +473,31 @@ Guide pages should use:
 
 Avoid dense textbook pages.
 
-### 3. Start Spacious
+### 3. Use Editorial Hierarchy
+
+Give the page a calm, book-like rhythm:
+
+- small running header
+- large serif page or chapter title
+- short intro paragraph
+- thin divider rule
+- small uppercase section headings
+- concise body text
+- clear action prompt or worksheet/log link
+
+### 4. Start Spacious
 
 A guide + logbook hybrid must be readable and writable.
 
 Give guide text breathing room.
 Give worksheets and log pages enough handwriting space.
 
-### 4. Use Reusable Page Modules
+### 5. Use Reusable Page Modules
 
 Build pages from consistent modules:
 
 - chapter intro block
+- short guide block
 - quick tip block
 - warning block
 - checklist block
@@ -413,11 +506,11 @@ Build pages from consistent modules:
 - reflection block
 - review block
 
-### 5. Avoid Too Many Borders
+### 6. Avoid Too Many Borders
 
 Do not create heavy boxed pages. Use light lines, whitespace, subtle dividers, and clean grouping.
 
-### 6. Make The Hybrid Feel Intentional
+### 7. Make The Hybrid Feel Intentional
 
 The reader should never feel like the book is half random guide pages and half generic blank pages.
 
@@ -431,21 +524,28 @@ Each log page should connect to the guide system.
 
 Use simple print-safe fonts.
 
-Suggested directions:
+Preferred direction:
 
-- Professional: Garamond, Palatino, Baskerville-style serif
-- Modern: Arial, Helvetica, Inter-style sans serif
-- Warm guided journal: elegant serif heading + clean sans label font
-- Technical guide: clean sans serif with strong structure
-- Premium hobby guide: restrained serif + minimal sans labels
+- Large page/chapter titles: elegant serif, high contrast if readable in print
+- Body text: clean readable sans or quiet serif
+- Labels/running headers: small uppercase sans with letter spacing
+- Functional fields: restrained sans-serif labels
+- Decorative type: only for cover or large title moments
+
+Suggested font pairings by feel:
+
+- Editorial premium: Didot/Bodoni-style display serif + clean sans labels
+- Warm journal: Garamond/Palatino-style serif + quiet sans labels
+- Practical workbook: classic serif title + readable sans body
+- Technical guide: restrained serif heading + clean sans structure
 
 Suggested interior sizes:
 
 | Use | Size | Notes |
 |---|---:|---|
-| Chapter title | 16-22 pt | use sparingly |
-| Page title | 14-18 pt | clear but not huge |
-| Section title | 10-12 pt | semibold |
+| Chapter title | 18-26 pt | spacious and editorial |
+| Page title | 16-22 pt | clear but not loud |
+| Section title | 9-11 pt | small uppercase or semibold |
 | Body text | 8.5-10 pt | readable and compact |
 | Field label | 7.5-9 pt | readable and quiet |
 | Helper text | 7-8 pt | use lightly |
@@ -454,6 +554,7 @@ Suggested interior sizes:
 Rules:
 
 - Do not use text below 7 pt.
+- Avoid light grey body text that becomes hard to read.
 - Embed fonts in exported PDFs.
 - Use decorative fonts only for cover or large headings.
 - Do not use hard-to-read fonts for functional labels.
@@ -473,7 +574,7 @@ Greyscale defaults:
 - Secondary text: `#666666`
 - Writing lines: `#D9D9D9`
 - Dividers: `#B8B8B8`
-- Callout background: very light grey, around `#F3F3F3` if printing quality supports it
+- Callout background: very light grey or warm cream tint if printing quality supports it
 
 ### Print Spacing Scale
 
@@ -560,98 +661,117 @@ Reference pages should be useful at a glance.
 
 Examples:
 
-- glossary
-- measurement guide
-- symptom/issue guide
-- routine examples
-- rating scale explanation
-- milestone guide
-- troubleshooting table
+- key terms
+- emergency information
+- supplies/tools list
+- contact/reference sheet
+- quick decision guide
+- resource list
 
-### 8. Repeating Log Entry Pages
+### 8. Repeating Log Pages
 
-Include if the niche benefits from tracking.
+Use for repeated real-world tracking.
 
-Possible fields:
+Include:
 
 - date/session
-- context
-- objective fields
-- rating/checklist
-- main notes
-- outcome
-- next action
+- key metadata
+- rating/checklist if useful
+- main notes area
+- observation area
+- next action/follow-up
 
 ### 9. Review Pages
 
-Add review pages after meaningful intervals:
-
-- weekly
-- monthly
-- every 7 entries
-- every 14 entries
-- every 30 entries
-- after each program phase
+Add review pages every 7, 14, 30, or 50 entries depending on the niche.
 
 Include:
 
 - wins
-- patterns
+- repeated patterns
 - what worked
 - what needs adjustment
 - next focus
 
 ### 10. Notes Pages
 
-Add a small number of useful notes pages at the back.
+Add a few flexible pages at the back:
 
-Avoid padding the book with too many blank pages.
+- lined
+- dotted
+- grid
+- blank
 
 ---
 
-## Hybrid Page Flow Patterns
+## Guide Page Structural Blueprint
 
-### Beginner Program Flow
-
-```txt
-Intro -> Quick Start -> Foundation Lessons -> Worksheets -> Logs -> Reviews -> Reference
-```
-
-### Tracker With Short Guide Flow
+This is a structure only. Convert it into a refined editorial print layout.
 
 ```txt
-Intro -> Quick Guide -> Setup Worksheet -> Repeating Logs -> Reviews -> Notes
+[RUNNING HEADER]
+
+[Large serif page title]
+
+Short intro paragraph explaining the idea in plain language.
+
+SMALL SECTION TITLE
+Thin divider rule
+Short practical explanation.
+- key point
+- key point
+- key point
+
+SMALL SECTION TITLE
+Thin divider rule
+Short example or use case.
+
+[Subtle callout]
+One short reminder, warning, or principle.
+
+Action prompt:
+Use the matching worksheet/log page to apply this now.
 ```
 
-### Phase-Based Program Flow
+---
+
+## Worksheet Page Structural Blueprint
+
+This is a structure only. Convert it into a refined print layout.
 
 ```txt
-Intro -> Phase 1 Guide -> Phase 1 Worksheets -> Phase 1 Logs -> Phase 1 Review -> Phase 2...
+[Worksheet Title]
+
+Purpose: one short line explaining why this page exists.
+
+Field / prompt 1:
+____________________________________________________
+____________________________________________________
+
+Field / prompt 2:
+____________________________________________________
+____________________________________________________
+
+Checklist:
+[ ] Item       [ ] Item       [ ] Item
+
+Decision / next step:
+____________________________________________________
 ```
-
-### Reference-First Flow
-
-```txt
-Intro -> Reference Guide -> Decision Tables -> Logs -> Reviews -> Troubleshooting
-```
-
-These are structural flows only. Do not copy the blocky appearance into final design.
 
 ---
 
 ## Repeating Log Entry Structural Blueprint
 
-This is a wireframe only. Convert it into a refined modern print layout.
+This is a wireframe only. Convert it into a refined print layout.
 
 ```txt
-[LOG ENTRY TITLE]
+[PAGE TITLE / ENTRY TYPE]
 
-Date: ____________       Session/Context: ____________
+Date: ____________       Time/Session: ____________
 
-Before / Setup:
+Primary fields:
 Field 1: _______________     Field 2: _______________
-
-Action / Observation:
 Field 3: _______________     Field 4: _______________
 
 Checklist / rating:
@@ -661,18 +781,20 @@ Main notes:
 ____________________________________________________
 ____________________________________________________
 ____________________________________________________
-
-Outcome:
 ____________________________________________________
 
-Next action:
+Observations:
+____________________________________________________
+____________________________________________________
+
+Next action / follow-up:
 ____________________________________________________
 ```
 
 Rules:
 
 - Fast metadata goes at the top.
-- Setup/context comes before outcome.
+- Objective tracking fields come before reflection fields.
 - The largest writing space should be for the most important user input.
 - End with action, follow-up, or summary.
 - Do not overload one page with too many prompts.
@@ -680,157 +802,93 @@ Rules:
 
 ---
 
-## Guide Page Structural Blueprint
-
-This is a wireframe only.
-
-```txt
-[CHAPTER / GUIDE TOPIC]
-
-Short explanation:
-2-4 short paragraphs or bullet blocks.
-
-Key idea:
-[short highlighted callout]
-
-Common mistakes:
-- Mistake 1
-- Mistake 2
-- Mistake 3
-
-Try this:
-1. Step one
-2. Step two
-3. Step three
-
-Apply it:
-Go to the related worksheet/log page and record your starting point.
-```
-
-Rules:
-
-- Keep guide pages short and actionable.
-- Avoid long textbook blocks.
-- Every guide page should connect to an action, worksheet, checklist, or log page.
-
----
-
 ## Cover Design System
 
-The cover must communicate both guide value and logbook utility.
+The cover must sell the book in Amazon search results.
+
+### Desired Cover Feeling
+
+The preferred cover style is:
+
+- editorial
+- warm
+- minimal
+- refined
+- bookish
+- calm
+- giftable
+- practical
+
+It should look like a useful printed guide/journal, not a busy activity book or generic tracker.
 
 ### Thumbnail Priorities
 
 1. Title is readable.
 2. Niche is obvious.
-3. Buyer understands it is both a guide and a logbook.
+3. Buyer identity is clear.
 4. Mood is different from competitors.
-5. Design looks professional.
+5. Design looks professional and intentional.
 
 ### Front Cover Hierarchy
 
 Recommended order:
 
-1. Main title
-2. Hybrid signal: `Guide + Logbook`, `Guide & Tracker`, `Field Guide + Journal`, `Workbook + Log`, etc.
-3. Benefit or positioning line
-4. Visual motif
-5. Author or brand name
+1. Main title in a strong serif style
+2. Guide + logbook label or niche/use-case subtitle
+3. One simple visual motif
+4. Benefit or positioning line
+5. Author or brand name if used
 
 ### Cover Style Directions
 
 Pick one clear direction.
 
-#### Premium Minimal
+#### Editorial Serif Minimal
 
-- strong typography
-- lots of negative space
-- limited colour palette
-- subtle icon or linework
+- oversized serif title
+- small uppercase subtitle
+- one simple motif
+- warm off-white background
+- restrained colour
 
 #### Warm Guided Journal
 
 - soft neutrals
 - gentle serif/sans pairing
 - calm emotional tone
+- subtle linework
 
-#### Practical Field Guide
+#### Practical Handbook
 
-- organized reference feel
-- subtle labels or specimen/diagram influence
-- useful but polished
+- clear title
+- restrained rules
+- useful subtitle
+- confident but quiet structure
 
-#### Utility / Workbook
+#### Giftable Keepsake
 
-- practical grid
-- strong labels
-- functional, durable feeling
+- premium serif title
+- minimal illustration
+- soft paper tone
+- elegant spacing
 
-#### Bold Category Standout
-
-- high contrast
-- strong title block
-- instantly readable in thumbnail
-
-#### Illustrated Niche-Specific
+#### Illustrated Reference
 
 - one strong relevant motif
-- not clipart-heavy
+- sparse line illustration
+- no clipart clutter
 - clear buyer signal
 
 ---
 
-## Recommended Workflow
-
-### Step 0 - Master Orchestrator
-
-Use first when starting from competitor screenshots/reviews and you want the AI to run the whole strategy process.
-
-Output:
-
-- niche understanding
-- research summary
-- competitor analysis
-- review mining
-- gap map
-- hybrid concept
-- physical design spec
-- guide structure
-- logbook structure
-- cover directions
-- generation prompts
-- risks and recommendations
-
-### Step 1 - Competitor Analysis
-
-Use when you want deep analysis before product design.
-
-### Step 2 - Hybrid Product Concept + Physical Design Spec
-
-Use after competitor analysis.
-
-### Step 3 - Guide + Interior Page Layout Plan
-
-Use after the concept is clear.
-
-### Step 4 - Cover Brief + Generation Prompts
-
-Use after the concept, page count, and trim size are known.
-
-### Step 5 - Final QA Review
-
-Use after cover/interior drafts or PDFs exist.
-
----
-
-# Prompt 0 - Master Orchestrator
+## Prompt 0 - Master Orchestrator
 
 Use this first when you want the AI to take competitor evidence and turn it into a complete original KDP guide + logbook hybrid direction.
 
 ```txt
 You are helping me create a physical guide + logbook hybrid product for Amazon KDP.
 
-This is a printed guide + logbook hybrid, not a web app or mobile app.
+This is a printed book, not a web app or mobile app.
 
 A file named guide-log-books-ai-design-document.md has been provided at the beginning of this session. Treat that file as the governing design document for this entire task. Do not ask me to paste it again.
 
@@ -845,38 +903,36 @@ I may provide very little context beyond competitor material such as:
 - negative reviews
 - occasional ratings, page counts, trim sizes, or prices
 
-Your job is to do the product thinking, research, competitor analysis, educational structure planning, print-design planning, and prompt-generation work needed to create a better original guide + logbook hybrid.
+Your job is to do the product thinking, research, competitor analysis, print-design planning, and prompt-generation work needed to create a better original guide + logbook hybrid.
 
 Important visual direction:
-- The final product should feel modern, minimalist, polished, and practical.
-- Use Refactoring UI-style principles translated into print: strong hierarchy, consistent spacing, restrained colour, thoughtful whitespace, clear grouping, and useful structure.
-- Use Tailwind-style design thinking as inspiration for systematic spacing, typography, and component consistency, but do not design a web app.
+- The final product should feel editorial, minimalist, warm, polished, practical, and easy to use.
+- Use a serif-led printed book style with generous whitespace, thin rules, small uppercase labels, restrained accents, and calm hierarchy.
+- Use systematic spacing and reusable page modules, but do not design a web app.
 - ASCII diagrams or block layouts are only rough structural wireframes. Do not copy the ASCII look. Convert them into refined print layouts.
 
 Research requirement:
 Do additional research as needed. If the uploaded material is incomplete, infer what you can, research what matters, and clearly label assumptions.
 
 Originality requirement:
-Do not copy competitor covers, titles, layouts, wording, illustrations, guide frameworks, worksheets, or unique concepts. Use competitor material only to identify buyer expectations, visual clichés, educational gaps, functional gaps, review complaints, and product opportunities.
+Do not copy competitor covers, titles, layouts, wording, illustrations, lesson structure, worksheets, or unique concepts. Use competitor material only to identify buyer expectations, visual clichés, functional gaps, educational gaps, review complaints, and product opportunities.
 
 PHASE 1 - UNDERSTAND THE NICHE
 - infer the niche and target buyer
-- identify the real-world job this guide + logbook helps with
+- identify the real-world job this hybrid book helps with
+- identify whether the book should be guide-heavy, log-heavy, or balanced
 - identify who would buy it and why
-- identify whether it should be guide-heavy, log-heavy, or balanced
-- identify whether it is more practical, emotional, professional, hobbyist, wellness, technical, or giftable
 - label assumptions clearly
 
 PHASE 2 - RESEARCH
 Research what is needed to strengthen the product direction:
 - common beginner questions in this niche
-- common mistakes or pain points
 - common title/subtitle patterns
 - common cover styles and visual clichés
 - common trim sizes and page counts
 - typical buyer expectations
 - repeated review complaints in this product category
-- useful guide sections, worksheets, checklists, reference pages, and log fields
+- useful guide pages, worksheets, reference pages, and log pages
 - KDP-related production assumptions if relevant
 
 PHASE 3 - COMPETITOR COVER ANALYSIS
@@ -885,7 +941,6 @@ Analyze the provided covers:
 - colour palette and mood
 - typography and hierarchy
 - thumbnail readability
-- whether the cover clearly signals guide + logbook value
 - buyer identity signal
 - niche clichés
 - what looks generic or overused
@@ -896,13 +951,12 @@ PHASE 4 - COMPETITOR INTERIOR ANALYSIS
 Analyze the provided interiors:
 - guide sections
 - worksheet pages
-- checklist pages
-- reference pages
-- log entry pages
-- page flow
+- log-entry pages
+- review pages
+- page density
 - writing space quality
-- layout density
 - prompt clarity
+- daily-use flow
 - usability problems
 - what feels lazy, generic, cramped, or incomplete
 - what real users still need
@@ -911,16 +965,13 @@ PHASE 5 - REVIEW MINING
 From positive reviews, extract:
 - what buyers love
 - features they want preserved
-- guide content they value
-- log/tracker content they value
 - emotional language
 - gift/use-case patterns
 - quality signals
 
 From negative reviews, extract:
 - repeated complaints
-- missing guide content
-- missing logbook fields
+- missing features
 - layout frustrations
 - unmet expectations
 - quality issues
@@ -938,7 +989,7 @@ Create:
 - positioning gap
 - production-quality gap
 
-PHASE 7 - BETTER HYBRID CONCEPT
+PHASE 7 - BETTER PRODUCT CONCEPT
 Create a superior original concept:
 - working title direction
 - subtitle direction
@@ -946,7 +997,6 @@ Create a superior original concept:
 - one-line positioning
 - emotional promise
 - unique value proposition
-- recommended guide/logbook ratio
 - what to keep from competitors
 - what to avoid completely
 
@@ -954,9 +1004,9 @@ PHASE 8 - PHYSICAL DESIGN SPEC
 Using guide-log-books-ai-design-document.md, create:
 - recommended trim size
 - recommended page count
+- guide-heavy, balanced, or log-heavy ratio
 - black-and-white or colour interior recommendation
 - bleed/no-bleed recommendation
-- paperback/hardcover recommendation
 - margin and gutter assumptions
 - typography direction
 - line-weight direction
@@ -964,30 +1014,10 @@ Using guide-log-books-ai-design-document.md, create:
 - page numbering direction
 - guide page types
 - worksheet page types
-- repeating log page blueprint
-- review/reference pages
+- log page types
+- review/setup/reference pages
 
-PHASE 9 - GUIDE STRUCTURE
-Create:
-- guide chapters or sections
-- purpose of each guide section
-- key lessons or concepts
-- quick-start page
-- common mistakes page if useful
-- reference pages if useful
-- how each guide section connects to a worksheet or log page
-
-PHASE 10 - LOGBOOK STRUCTURE
-Create:
-- full list of logbook page types
-- recommended page order
-- repeated page count
-- what each page includes
-- why each page exists
-- how each page solves buyer complaints or improves usability
-- what pages should not be included because they add filler
-
-PHASE 11 - COVER DIRECTION
+PHASE 9 - COVER DIRECTION
 Create:
 - 2 to 3 original cover directions
 - recommended strongest direction
@@ -999,7 +1029,19 @@ Create:
 - typography direction
 - motif/illustration/photo direction
 
-PHASE 12 - GENERATION PROMPTS
+PHASE 10 - INTERIOR STRUCTURE
+Create:
+- full list of page types
+- recommended page order
+- guide section sequence
+- worksheet placement
+- repeated log page count
+- what each page includes
+- why each page exists
+- how each page solves buyer complaints or improves usability
+- what pages should not be included because they add filler
+
+PHASE 11 - GENERATION PROMPTS
 Create prompts I can use with an image/design AI for:
 1. front cover concept
 2. full wraparound KDP cover brief
@@ -1016,33 +1058,29 @@ Return the answer in this order:
 4. competitor interior analysis
 5. review mining summary
 6. gap map
-7. better hybrid concept
+7. better product concept
 8. physical design spec
-9. guide structure
-10. logbook structure
-11. cover directions
-12. generation prompts
-13. final risks and recommendations
+9. cover directions
+10. interior structure
+11. generation prompts
+12. final risks and recommendations
 
 Be specific, decisive, and practical. Build something I can actually publish.
 ```
 
 ---
 
-# Prompt 1 - Competitor Analysis + Hybrid Gap Map
-
-Use this when you want to deeply understand the market before deciding the product concept.
+## Prompt 1 - Competitor Analysis + Gap Map
 
 ```txt
 I am creating a physical guide + logbook hybrid for Amazon KDP.
 
-This is a printed guide + logbook hybrid, not a web app or mobile app.
+This is a printed product, not a web app or mobile app.
 
 A file named guide-log-books-ai-design-document.md has been provided at the beginning of this session. Use it as the governing design document.
 
 I have attached some or all of the following:
 - competitor cover images
-- competitor interior images
 - competitor guide pages
 - competitor worksheet pages
 - competitor log pages
@@ -1053,25 +1091,23 @@ Use the attached material and do additional research where useful.
 
 Important:
 - Use competitor products only for analysis.
-- Do not copy titles, covers, layouts, wording, illustrations, frameworks, worksheets, or unique design ideas.
-- If examples are from a specific niche, extract transferable hybrid patterns instead of copying niche-specific content.
-- ASCII or text layout examples are structural only; the final design direction should be modern, minimalist, and polished.
+- Do not copy titles, covers, layouts, wording, illustrations, lesson structures, worksheets, or unique design ideas.
+- Dog/pet examples are only examples if the current product is not dog-related. Extract transferable structure, not niche-specific content.
+- ASCII or text layout examples are structural only; the final design direction should be editorial, minimalist, warm, and polished.
 
 STEP 1 - INFER THE NICHE
 - What niche does this appear to be?
 - Who is the likely buyer?
-- What job does the guide + logbook help them do?
-- Should the product be guide-heavy, log-heavy, or balanced?
+- What job does the book help them do?
+- Should this be guide-heavy, log-heavy, or balanced?
 - What assumptions are you making?
 
 STEP 2 - RESEARCH THE MARKET
 Research what is needed to strengthen the analysis:
-- common beginner questions
-- common mistakes
 - common product claims
 - common cover patterns
 - common guide structures
-- common worksheet/log structures
+- common log/worksheet structures
 - buyer expectations
 - review complaints
 - page count and trim-size patterns if relevant
@@ -1082,7 +1118,6 @@ For each competitor cover, assess:
 - colour palette
 - typography hierarchy
 - thumbnail readability
-- guide + logbook signal
 - buyer signal
 - niche clichés
 - what feels generic
@@ -1094,12 +1129,10 @@ For each competitor interior, assess:
 - guide pages
 - worksheet pages
 - log pages
-- checklists
-- reference pages
-- field usefulness
+- fields included
 - layout density
 - handwriting space
-- flow and order
+- flow and order of fields
 - instruction quality
 - missing sections
 - usability problems
@@ -1114,8 +1147,7 @@ From positive reviews:
 
 From negative reviews:
 - repeated complaints
-- missing guide content
-- missing worksheet/log fields
+- missing features
 - layout frustrations
 - unmet expectations
 - quality concerns
@@ -1139,9 +1171,7 @@ Be specific and decisive.
 
 ---
 
-# Prompt 2 - Better Hybrid Product Concept + Physical Design Spec
-
-Use this after Prompt 1.
+## Prompt 2 - Better Product Concept + Physical Design Spec
 
 ```txt
 Using the competitor analysis and gap map below, create a better original physical guide + logbook hybrid concept for Amazon KDP.
@@ -1151,14 +1181,15 @@ This is a printed product, not a web app.
 A file named guide-log-books-ai-design-document.md has been provided at the beginning of this session. Use it as the governing design document.
 
 Design style requirement:
-- modern minimalist
-- polished
+- editorial minimalist
+- warm and polished
 - practical
 - clear hierarchy
-- skimmable guide sections
-- useful worksheets/log pages
-- Refactoring UI-inspired spacing and visual discipline translated into print
-- Tailwind-like design consistency translated into fixed print tokens
+- serif-led title system
+- small uppercase labels
+- thin rules
+- generous whitespace
+- refined printed workbook feeling
 - no ASCII/blocky final aesthetic
 
 COMPETITOR ANALYSIS AND GAP MAP:
@@ -1173,21 +1204,24 @@ Create:
 - one-line positioning
 - emotional promise
 - unique value proposition
-- guide-heavy, log-heavy, or balanced hybrid recommendation
 
-2. WHAT TO KEEP
+2. HYBRID RATIO
+- guide-heavy, balanced, or log-heavy
+- why that ratio fits the buyer
+- recommended page count split
+
+3. WHAT TO KEEP
 - features buyers already like
-- guide expectations that should remain
-- logbook expectations that should remain
+- niche expectations that should remain
 
-3. WHAT TO AVOID
+4. WHAT TO AVOID
 - competitor clichés
 - review complaints
 - generic low-content patterns
-- dense textbook-style guide pages
-- cramped or confusing worksheet/log layouts
+- cramped or confusing layout choices
+- unnecessary filler guide content
 
-4. PHYSICAL FORMAT
+5. PHYSICAL FORMAT
 - trim size recommendation
 - page count recommendation
 - black-and-white or colour interior
@@ -1195,52 +1229,32 @@ Create:
 - paperback/hardcover assumption
 - matte/gloss cover recommendation
 
-5. COVER DIRECTION
+6. COVER DIRECTION
 - visual style
 - colour palette
 - typography direction
 - motif/illustration/photo direction
 - thumbnail strategy
-- how to communicate guide + logbook clearly
 - what makes it different from competitors
 
-6. INTERIOR DESIGN SYSTEM
+7. INTERIOR DESIGN SYSTEM
 - margin and gutter assumptions
 - type scale direction
 - line-weight direction
 - spacing rhythm
-- callout treatment
-- worksheet treatment
-- log-entry treatment
 - page numbering treatment
 - section heading treatment
 - handwriting-space rules
 
-7. GUIDE STRUCTURE
-- guide chapters/sections
-- purpose of each section
-- key lessons
-- quick-start content
-- reference/checklist content
-- how each section connects to action
-
-8. LOGBOOK STRUCTURE
-- all log/worksheet/review page types
+8. PAGE STRUCTURE
+- all guide page types
+- all worksheet page types
+- all log page types
 - purpose of each page type
-- fields on each page type
 - how many times each page repeats
 - what buyer complaint or use-case each page solves
 
-9. REPEATING PAGE BLUEPRINTS
-Provide structural blueprints for:
-- guide page
-- worksheet page
-- log entry page
-- review page
-
-Remember: any ASCII is only a wireframe. The final style should be clean, modern, and print-polished.
-
-10. FINAL BUILD NOTES
+9. FINAL BUILD NOTES
 - what to generate next
 - risks to watch for
 - QA checks before PDF export
@@ -1248,9 +1262,7 @@ Remember: any ASCII is only a wireframe. The final style should be clean, modern
 
 ---
 
-# Prompt 3 - Guide + Logbook Interior Page Layout Plan
-
-Use this when the concept and physical spec are clear.
+## Prompt 3 - Interior Page Layout Plan
 
 ```txt
 Create a complete interior layout plan for this physical Amazon KDP guide + logbook hybrid.
@@ -1261,11 +1273,12 @@ Use the product concept and design spec below:
 [PASTE OUTPUT FROM PROMPT 2]
 
 Important style requirement:
-- modern minimalist print layout
+- editorial minimalist print layout
+- warm refined workbook feeling
+- large serif titles where appropriate
+- small uppercase labels
 - clean spacing
 - subtle lines
-- refined typography
-- skimmable guide content
 - enough handwriting space
 - no heavy boxes unless functionally necessary
 - no ASCII/blocky final aesthetic
@@ -1275,10 +1288,10 @@ Create:
 1. INTERIOR FORMAT SUMMARY
 - trim size
 - page count
-- guide/logbook ratio
 - bleed/no-bleed
 - margin/gutter assumptions
 - black-and-white or colour interior
+- guide/log/worksheet ratio
 
 2. FULL PAGE SEQUENCE
 List the exact page sequence from page 1 to the final page.
@@ -1286,50 +1299,47 @@ List the exact page sequence from page 1 to the final page.
 3. GUIDE PAGE TYPES
 For each guide page type, specify:
 - purpose
-- section heading
-- body text density
+- title style
+- body copy density
 - callouts
-- checklists
 - examples
 - action prompt
-- related worksheet/log page
+- matching worksheet/log page if applicable
 
 4. WORKSHEET PAGE TYPES
-For each worksheet type, specify:
-- purpose
-- fields
-- field order
-- writing space
-- connection to guide content
-
-5. LOG PAGE TYPES
-For each log page type, specify:
+For each worksheet page type, specify:
 - purpose
 - fields
 - field order
 - approximate writing space
 - line count or writing area size
 - spacing notes
+- whether it repeats
 - repeat count
+
+5. REPEATING LOG PAGE MASTER TEMPLATE
+Specify:
+- page header
+- top metadata fields
+- main tracking fields
+- notes/reflection area
+- checklist/rating area if needed
+- follow-up/action area
+- footer/page number treatment
 
 6. REVIEW / SUMMARY PAGES
 Specify where review pages appear and what they ask.
 
-7. REFERENCE PAGES
-Specify any glossary, troubleshooting, quick-reference, measurement, routine, or example pages.
+7. STYLE NOTES
+Explain how to make the pages feel editorial, minimal, warm, polished, and practical.
 
-8. MODERN PRINT STYLE NOTES
-Explain how to make the book feel minimal and polished, not generic, cramped, or textbook-heavy.
-
-9. INTERIOR QA CHECKLIST
-Check margins, gutter, readability, handwriting space, line weights, repeated-page consistency, guide/log flow, page count, and placeholder removal.
+8. INTERIOR QA CHECKLIST
+Check margins, gutter, readability, handwriting space, line weights, repeated-page consistency, guide/log connection, page count, and placeholder removal.
 ```
 
 ---
 
-# Prompt 4 - KDP Cover Brief + Generation Prompts
-
-Use this after the concept, interior structure, trim size, and page count are known.
+## Prompt 4 - KDP Cover Brief + Generation Prompts
 
 ```txt
 Create a professional KDP cover brief and cover-generation prompts for this physical guide + logbook hybrid.
@@ -1340,11 +1350,11 @@ Use the product concept and interior spec below:
 [PASTE OUTPUT FROM PROMPT 2 OR 3]
 
 Important style requirement:
-- modern minimalist
+- editorial minimalist
+- warm premium workbook/journal feeling
 - strong Amazon thumbnail readability
 - refined typography
 - clear niche signal
-- clear guide + logbook signal
 - original, not derivative of competitors
 - avoid generic Canva-template energy
 - avoid copying competitor colours, composition, or motifs too closely
@@ -1355,12 +1365,10 @@ Create:
 - target buyer
 - emotional promise
 - what the cover must communicate in 2 seconds
-- how to signal both guide value and logbook utility
 
 2. FRONT COVER BRIEF
 - title hierarchy
 - subtitle placement
-- guide + logbook signal placement
 - author/brand placement
 - motif or image direction
 - composition
@@ -1374,8 +1382,7 @@ Create:
 - short sales copy direction
 - bullet benefit direction
 - who it is for
-- what guide content is inside
-- what logbook/tracker content is inside
+- what is inside
 - barcode safe-area reminder
 
 4. SPINE GUIDANCE
@@ -1396,19 +1403,17 @@ For each direction include:
 6. IMAGE/DESIGN AI PROMPTS
 Create:
 - safe market-fit prompt
-- differentiated modern prompt
-- bold standout prompt
+- editorial minimalist prompt
+- premium standout prompt
 - negative prompt / avoid list
 
 7. COVER QA CHECKLIST
-Check thumbnail readability, guide + logbook clarity, originality, safe areas, barcode area, hierarchy, and print-readiness.
+Check thumbnail readability, originality, safe areas, barcode area, hierarchy, and print-readiness.
 ```
 
 ---
 
-# Prompt 5 - Final PDF / Screenshot QA Review
-
-Use this after the cover or interior has been generated.
+## Prompt 5 - Final PDF / Screenshot QA Review
 
 ```txt
 You are reviewing a finished or near-finished physical guide + logbook hybrid for Amazon KDP.
@@ -1426,30 +1431,28 @@ Review for:
 - does the product clearly fit the niche?
 - does it speak to the right buyer?
 - does it solve the original competitor gaps?
-- is the guide/logbook balance right?
+- is the guide/logbook balance correct?
 
 2. COVER QUALITY
 - is the title readable at Amazon thumbnail size?
 - is the hierarchy strong?
-- does the cover clearly signal guide + logbook value?
 - is the cover original but still niche-relevant?
 - does it avoid competitor clichés?
-- does it feel modern, minimalist, and polished?
+- does it feel editorial, minimalist, warm, and polished?
 
-3. GUIDE CONTENT QUALITY
-- is the guide content useful and actionable?
-- is it skimmable?
-- does it avoid dense textbook blocks?
-- does each guide section connect to an action, worksheet, or log page?
-- are callouts/checklists helpful rather than filler?
+3. GUIDE QUALITY
+- is the guide content concise and useful?
+- does it avoid filler?
+- does each guide section lead to action?
+- are examples and callouts easy to skim?
 
-4. LOGBOOK / WORKSHEET USABILITY
+4. INTERIOR USABILITY
 - is there enough handwriting space?
 - are fields useful and logically ordered?
 - are there too many boxes or heavy borders?
 - are labels readable?
 - do repeated pages feel consistent?
-- do setup/review/reference pages add real value?
+- do setup/review pages add real value?
 
 5. PRINT DESIGN QUALITY
 - margins look safe
@@ -1473,7 +1476,7 @@ Output:
 2. highest-risk issues
 3. design polish issues
 4. guide-content issues
-5. worksheet/log usability issues
+5. usability issues
 6. KDP technical risks
 7. exact fixes before upload
 8. final recommendation: ready, almost ready, or needs redesign
@@ -1483,32 +1486,20 @@ Output:
 
 ## Final QA Checklist
 
-### Guide Content
-
-- [ ] Guide pages are useful, not filler.
-- [ ] Guide pages are skimmable.
-- [ ] Dense textbook blocks are avoided.
-- [ ] Each guide section leads to an action, worksheet, checklist, or log page.
-- [ ] Reference pages are useful at a glance.
-- [ ] The guide/logbook ratio matches the niche.
-
-### Worksheets + Logs
-
-- [ ] Fields are useful and specific.
-- [ ] Writing spaces are large enough for real handwriting.
-- [ ] Page flow is logical.
-- [ ] Review pages add value.
-- [ ] Repeated pages are consistent.
-- [ ] No generic filler pages dominate the book.
-
-### Interior Print Design
+### Interior
 
 - [ ] Correct trim size.
 - [ ] Fixed-size print pages, not app screens.
 - [ ] Margins and gutter are safe.
 - [ ] Important content is away from trim edge.
+- [ ] Guide pages are concise and useful.
+- [ ] Worksheets connect to the guide content.
+- [ ] Log pages connect to the guide system.
 - [ ] Field labels are readable.
+- [ ] Writing spaces are large enough for real handwriting.
 - [ ] Line weights are consistent.
+- [ ] Repeated pages are consistent.
+- [ ] Review pages add real value.
 - [ ] Fonts are embedded.
 - [ ] No placeholder text remains.
 - [ ] No copied competitor wording or layout remains.
@@ -1523,8 +1514,7 @@ Output:
 - [ ] Barcode area clear.
 - [ ] No spine text if page count is too low.
 - [ ] Title readable at Amazon thumbnail size.
-- [ ] Cover clearly signals guide + logbook value.
-- [ ] Cover feels modern, minimalist, and niche-relevant.
+- [ ] Cover feels editorial, minimalist, warm, and niche-relevant.
 - [ ] Images are high resolution.
 - [ ] Transparencies flattened.
 - [ ] Fonts embedded.
@@ -1538,13 +1528,12 @@ Use this system to create a **better physical guide + logbook hybrid**, not a ge
 
 The final product should:
 
-- teach enough to be useful
-- help the reader take action
-- provide structured pages for tracking and reflection
 - look strong in Amazon search
-- feel useful when written in
+- feel useful when read
+- feel easy to write in
 - solve buyer complaints found in competitor reviews
-- use a consistent modern minimalist print design system
+- combine guide pages, worksheets, and log pages intentionally
+- use a consistent editorial minimalist print design system
 - avoid copying competitors
 - avoid web-app thinking
 - avoid ASCII/blocky final styling
