@@ -1233,7 +1233,7 @@ Design style requirement:
 - no ASCII/blocky final aesthetic
 
 COMPETITOR ANALYSIS AND GAP MAP:
-[PASTE OUTPUT FROM PROMPT 1]
+Use the competitor analysis and gap map you produced earlier in this same conversation (Prompt 1's response). Do not ask me to repost it.
 
 Create:
 
@@ -1310,7 +1310,7 @@ Create a complete interior layout plan for this physical Amazon KDP guide + logb
 A file named guide-log-books-ai-design-document.md has been provided at the beginning of this session. Use it as the governing design document.
 
 Use the product concept and design spec below:
-[PASTE OUTPUT FROM PROMPT 2]
+Use the product concept and physical design spec you produced earlier in this same conversation (Prompt 2's response). Do not ask me to repost it.
 
 Important style requirement:
 - editorial minimalist print layout
@@ -1387,7 +1387,7 @@ Create a professional KDP cover brief and cover-generation prompts for this phys
 A file named guide-log-books-ai-design-document.md has been provided at the beginning of this session. Use it as the governing design document.
 
 Use the product concept and interior spec below:
-[PASTE OUTPUT FROM PROMPT 2 OR 3]
+Use the product concept and interior spec you produced earlier in this same conversation (Prompt 2 and/or Prompt 3's response). Do not ask me to repost it.
 
 Important style requirement:
 - editorial minimalist
@@ -1463,7 +1463,7 @@ I will provide screenshots, exported page images, or PDFs of the cover and inter
 A file named guide-log-books-ai-design-document.md has been provided at the beginning of this session. Use it as the governing design document.
 
 Use the product concept and design spec below as the product-specific standard:
-[PASTE PRODUCT CONCEPT / DESIGN SPEC]
+Use the product concept and design spec produced earlier in this same conversation. Do not ask me to repost it. If this is a fresh conversation with no prior context, ask me for it once.
 
 Review for:
 
